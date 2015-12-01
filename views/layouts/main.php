@@ -73,9 +73,9 @@ AppAsset::register($this);
             <span id="chuyentoike">
                 &copy; Chuyện tôi kể <?= date('Y') ?>
             </span>
-            <div  id="language-selector" class="pull-right">
-                <?= \app\components\widgets\LanguageSelector::widget(); ?>
-            </div>
+<!--            <div  id="language-selector" class="pull-right">
+                <?php //echo \app\components\widgets\LanguageSelector::widget(); ?>
+            </div>-->
         </div>
     </footer>
 
