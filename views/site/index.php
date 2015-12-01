@@ -32,22 +32,46 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                 <?php 
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
                 $mauchu=['#f05','#0a0','#007197','#ff6b00'];
+                $i=0;
                 foreach ($books as $key=>$book){
                 ?>
                     <div class="row">
+                    <?php
+                        if($i>2){
+                    ?>
                         <a href="?baiviet=<?=$book['id']?>">
-                        <div class="col-lg-7" style="color: <?=$mauchu[$key%4]?>;margin-top: 10px;">
-                            <p>
-                                <?php
-                                    echo $book['title'];
-                                ?>
-                            </p>
-                        </div>
-                        <div class="col-lg-5">
-                            <img src="../uploads/<?=$book['img']?>" width="100%" height="70px;">
-                        </div>
-                       
+                            <div class="col-lg-7" style="color: <?=$mauchu[$key%4]?>;margin-top: 10px;">
+                                <p>
+                                    <?php
+                                        echo $book['title'];
+                                    ?>
+                                </p>
+                            </div>
+                            <div class="col-lg-5">
+                                <img src="../uploads/<?=$book['img']?>" width="100%" height="70px;">
+                            </div>
                         </a>
+                    <?php
+                        }else{
+                    ?>
+                        <a href="?baiviet=<?=$book['id']?>">
+                            
+                            <div style="margin-top: 10px; margin-left: 15px;">
+                                <img src="../uploads/<?=$book['img']?>" width="210px;" height="180px;">
+                            
+                            <p style="color: <?=$mauchu[$key%4]?>;margin-top: 10px;">
+                                <p>
+                                    <?php
+                                        echo $book['title'];
+                                    ?>
+                                </p>
+                            </p>
+                            </div>
+                        </a>
+                    <?php
+                        }
+                    ?>
+                            
                         <?php
                             if(Yii::$app->user->can('permission_monitor')){
                         ?>
@@ -56,7 +80,9 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                             title="Update" aria-label="Update" data-pjax="0">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </a>
-                        <?php }?>
+                        <?php
+                            }
+                        ?>
                     </div>
                     <p style="color: #aaaaaa; margin: 10px 0 20px 0;">
                             <?php
@@ -65,6 +91,8 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                     </p>
                     <hr>
                 <?php
+                    
+                 $i++;
                 }
                 ?>
                 
