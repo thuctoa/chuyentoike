@@ -20,7 +20,7 @@ nbproject
 
 # Mac DS_Store Files
 #.DS_Store
-
+/web
 # phpunit itself is not needed
 #phpunit.phar
 # local phpunit config
