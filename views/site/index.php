@@ -45,13 +45,15 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                 ?>
                 <div class="row">
                     <a href="?baiviet=<?=$id?>">
-                        <div style="color: <?=$mauchu[$id%4]?>;margin-top: 30px; margin-left: 15px;margin-right: 15px;">
-                            <img src="../uploads/<?=$books[$id]['img']?>" width="100%" height="170px;">
+                        <div class="col-lg-6" style="color: <?=$mauchu[$id%4]?>;margin-top: 0px;">
                             <p>
                                 <?php
                                     echo $books[$id]['title'];
                                 ?>
                             </p>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="../uploads/<?=$books[$id]['img']?>" width="100%" height="80px;">
                         </div>
                     </a>
                 </div>
