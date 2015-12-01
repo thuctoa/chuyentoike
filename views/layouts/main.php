@@ -38,7 +38,6 @@ AppAsset::register($this);
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-
 <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
