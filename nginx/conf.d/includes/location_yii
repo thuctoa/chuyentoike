@@ -1,0 +1,36 @@
+#Yii Specific location configurations.
+ 
+location / {
+    rewrite ^/(.*)$ /index.php?r=$1;
+}
+
+location ~ /(protected|framework|nbproject) {
+    deny all;
+    access_log off;
+    log_not_found off;
+}
+
+location ~ /themes/\w+/views {
+    deny all;
+    access_log off;
+    log_not_found off;
+}
+
+location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar|txt|woff|otf|ttf|mkv)$ {
+    try_files $uri =404;
+    access_log off;
+    expires max;
+    add_header Pragma public;
+    add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+}
+
+#End Yii Specific specific location configurations.
+
+location ~ \.php$ {
+    fastcgi_pass    php;
+    fastcgi_index   index.php;
+    fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    #fastcgi_param   ENV staging;
+    include         fastcgi_params;
+}
