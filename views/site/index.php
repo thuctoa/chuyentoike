@@ -1,6 +1,4 @@
 <?php
-use yii\helpers\Html;
-use yii\grid\GridView; 
 $this->title = Yii::t('app','Chuyện tôi kể');
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -9,7 +7,8 @@ $this->title = Yii::t('app','Chuyện tôi kể');
         <div class="col-lg-9 ">
             <div class="noidung">
                 <?php 
-                 if(isset($_GET['baiviet'])){
+                $id = '';
+                if(isset($_GET['baiviet'])){
                      $id=$_GET['baiviet'];
                      foreach ($books as $book){
                          if($id==$book['id']){
@@ -19,12 +18,12 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                          }
 
                      }
-                 }
-                 else{
-                     echo '<h1>'.current($books)['title'].'</h1>';
-                     echo current($books)['description'];
-                 }
-                 ?>
+                }
+                else{
+                    echo '<h1>'.current($books)['title'].'</h1>';
+                    echo current($books)['description'];
+                }
+                ?>
                 <div
                     class="fb-like"
                     data-share="true"
@@ -38,13 +37,48 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                 <?php 
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
                 $mauchu=['#f05','#0a0','#007197','#ff6b00'];
+                if($id!=''){
+                ?>
+                <div class="row">
+                    <a href="?baiviet=<?=$id?>">
+                        <div style="margin-top: 30px; margin-left: 15px;margin-right: 15px;">
+                            <p>
+                                <?php
+                                    echo $books[$id]['title'];
+                                ?>
+                            </p>
+                        
+                            <img src="../uploads/<?=$books[$id]['img']?>" width="100%" height="170px;">
+                        </div>
+                    </a>
+                </div>
+                <?php
+                            if(Yii::$app->user->can('permission_monitor')){
+                        ?>
+                        <a href="/book/update?id=<?=$id?>" 
+                            class="pull-right"
+                            title="Update" aria-label="Update" data-pjax="0">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                <?php
+                    }
+                ?>
+                <p style="color: #aaaaaa; margin: 10px 0 20px 0;">
+                            <?php
+                                echo date('m-d-Y H:m:s', $book['time_new']);
+                            ?>
+                </p>
+                <hr>
+                <?php
+                }
                 $i=0;
                 foreach ($books as $key=>$book){
+                    if($i>10){
+                        break;
+                    }
+                    if($key!=$id){
                 ?>
                     <div class="row">
-                    <?php
-                        if($i>2){
-                    ?>
                         <a href="?baiviet=<?=$book['id']?>">
                             <div class="col-lg-7" style="color: <?=$mauchu[$key%4]?>;margin-top: 10px;">
                                 <p>
@@ -54,30 +88,9 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                                 </p>
                             </div>
                             <div class="col-lg-5">
-                                <img src="../uploads/<?=$book['img']?>" width="100%" height="70px;">
+                                <img src="../uploads/<?=$book['img']?>" width="100%;" height="70px;">
                             </div>
                         </a>
-                    <?php
-                        }else{
-                    ?>
-                        <a href="?baiviet=<?=$book['id']?>">
-                            
-                            <div style="margin-top: 10px; margin-left: 15px;margin-right: 15px;">
-                                <img src="../uploads/<?=$book['img']?>" width="100%;" height="180px;">
-                            
-                            <p style="color: <?=$mauchu[$key%4]?>;margin-top: 10px;">
-                                <p>
-                                    <?php
-                                        echo $book['title'];
-                                    ?>
-                                </p>
-                            </p>
-                            </div>
-                        </a>
-                    <?php
-                        }
-                    ?>
-                            
                         <?php
                             if(Yii::$app->user->can('permission_monitor')){
                         ?>
@@ -97,8 +110,8 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                     </p>
                     <hr>
                 <?php
-                    
-                 $i++;
+                    }
+                    $i++;
                 }
                 ?>
                 

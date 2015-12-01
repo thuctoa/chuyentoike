@@ -65,7 +65,6 @@ class SiteController extends Controller
     {
         $books= Book::find()
                 ->indexBy('id')
-                ->limit(10)
                 ->orderBy(['time_new' => SORT_DESC])
                 ->all();
         return $this->render('index', [
