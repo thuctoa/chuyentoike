@@ -36,9 +36,6 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                 ?>
                     <div class="row">
                         <a href="?baiviet=<?=$book['id']?>">
-                        <div class="col-lg-5">
-                            <img src="../uploads/<?=$book['img']?>" width="130%" height="70px;">
-                        </div>
                         <div class="col-lg-7" style="color: <?=$mauchu[$key%4]?>;margin-top: 10px;">
                             <p>
                                 <?php
@@ -46,6 +43,10 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                                 ?>
                             </p>
                         </div>
+                        <div class="col-lg-5">
+                            <img src="../uploads/<?=$book['img']?>" width="100%" height="70px;">
+                        </div>
+                       
                         </a>
                         <?php
                             if(Yii::$app->user->can('permission_monitor')){
@@ -62,7 +63,7 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                                 echo date('m-d-Y H:m:s', $book['time_new']);
                             ?>
                     </p>
-                
+                    <hr>
                 <?php
                 }
                 ?>
