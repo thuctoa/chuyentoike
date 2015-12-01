@@ -37,6 +37,10 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                 <?php 
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
                 $mauchu=['#f05','#0a0','#007197','#ff6b00'];
+                if($id==''){
+                    reset($books);
+                    $id=key($books);
+                }
                 if($id!=''){
                 ?>
                 <div class="row">
@@ -65,7 +69,7 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                 ?>
                 <p style="color: #aaaaaa; margin: 10px 0 20px 0;">
                             <?php
-                                echo date('m-d-Y H:m:s', $book['time_new']);
+                                echo date('m-d-Y H:m:s', $books[$id]['time_new']);
                             ?>
                 </p>
                 <hr>
