@@ -8,12 +8,6 @@ $this->title = Yii::t('app','Chuyện tôi kể');
     <div class="row">
         <div class="col-lg-9 ">
             <div class="noidung">
-                <div
-                    class="fb-like"
-                    data-share="true"
-                    data-width="450"
-                    data-show-faces="true">
-                </div>
                 <?php 
                  if(isset($_GET['baiviet'])){
                      $id=$_GET['baiviet'];
@@ -31,6 +25,12 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                      echo current($books)['description'];
                  }
                  ?>
+                <div
+                    class="fb-like"
+                    data-share="true"
+                    data-width="450"
+                    data-show-faces="true">
+                </div>
             </div>
         </div>
         <div class="col-lg-3 ">
