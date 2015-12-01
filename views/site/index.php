@@ -45,7 +45,7 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                 ?>
                 <div class="row">
                     <a href="?baiviet=<?=$id?>">
-                        <div style="margin-top: 30px; margin-left: 15px;margin-right: 15px;">
+                        <div style="color: <?=$mauchu[$id%4]?>;margin-top: 30px; margin-left: 15px;margin-right: 15px;">
                             <img src="../uploads/<?=$books[$id]['img']?>" width="100%" height="170px;">
                             <p>
                                 <?php
