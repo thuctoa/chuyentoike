@@ -62,8 +62,8 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                     ?>
                         <a href="?baiviet=<?=$book['id']?>">
                             
-                            <div style="margin-top: 10px; margin-left: 15px;">
-                                <img src="../uploads/<?=$book['img']?>" width="210px;" height="180px;">
+                            <div style="margin-top: 10px; margin-left: 15px;margin-right: 15px;">
+                                <img src="../uploads/<?=$book['img']?>" width="100%;" height="180px;">
                             
                             <p style="color: <?=$mauchu[$key%4]?>;margin-top: 10px;">
                                 <p>
