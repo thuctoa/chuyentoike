@@ -1,6 +1,7 @@
 <?php
 $this->title = Yii::t('app','Chuyện tôi kể');
 //$this->params['breadcrumbs'][] = $this->title;
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <div class="site-index">
     <div class="row">
@@ -29,6 +30,22 @@ $this->title = Yii::t('app','Chuyện tôi kể');
                     data-share="true"
                     data-width="450"
                     data-show-faces="true">
+                </div>
+                <div id="fb-root"></div>
+                <script>
+                    (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=1502054410090394";
+                        fjs.parentNode.insertBefore(js, fjs);
+                      }(document, 'script', 'facebook-jssdk'));
+                </script>
+                <div class="fb-comments" 
+                     data-href="<?=$actual_link?>" 
+                     data-width="600" 
+                     data-order-by="social"
+                     data-numposts="5">
                 </div>
             </div>
         </div>
