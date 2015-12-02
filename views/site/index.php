@@ -115,7 +115,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 <?php
                     }
                 ?>
-                <p style="color: #aaaaaa; margin: 10px 0 20px 0;">
+                <p style="color: #aaaaaa; margin: -30px 0 20px 0;top: -12px; position: relative;">
                             <?php
                                 echo date('m-d-Y H:m:s', $books[$id]['time_new']);
                             ?>
@@ -131,7 +131,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 ?>
                     <div class="row">
                         <a href="?baiviet=<?=$book['id']?>">
-                            <div class="col-lg-7" style="color: <?=$mauchu[$key%4]?>;margin-top: 10px;">
+                            <div class="col-lg-7" style="color: <?=$mauchu[$key%4]?>;">
                                 <p>
                                     <?php
                                         echo $book['title'];
@@ -154,7 +154,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             }
                         ?>
                     </div>
-                    <p style="color: #aaaaaa; margin: 10px 0 20px 0;">
+                    <p style="color: #aaaaaa; margin: 0px 0 20px 0; position: relative;top: -12px;">
                             <?php
                                 echo date('m-d-Y H:m:s', $book['time_new']);
                             ?>
