@@ -25,12 +25,15 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     echo current($books)['description'];
                 }
                 ?>
+                <!--nutlike-->
                 <div
                     class="fb-like"
                     data-share="true"
                     data-width="450"
                     data-show-faces="true">
                 </div>
+                
+                <!--box binh luan--> 
                 <div id="fb-root"></div>
                 <script>
                     (function(d, s, id) {
@@ -47,6 +50,33 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                      data-order-by="social"
                      data-numposts="100">
                 </div>
+                
+<!--                like page
+                <div id="fb-root"></div>
+                <script>
+                    (function(d, s, id) {  
+                        var js, fjs = d.getElementsByTagName(s)[0];  
+                        if (d.getElementById(id)) return;  
+                        js = d.createElement(s); js.id = id;  
+                        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.3";  
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+                <div class="fb-post" 
+                     data-href="https://www.facebook.com/chuyentoikevetoi/posts/134998843532792" 
+                     data-width="600"><div class="fb-xfbml-parse-ignore">
+                        <blockquote 
+                            cite="https://www.facebook.com/chuyentoikevetoi/posts/134998843532792">
+                            <p>Chuy&#x1ec7;n t&#xf4;i k&#x1ec3;</p>Posted by 
+                            <a href="https://www.facebook.com/chuyentoikevetoi/">
+                                Chuyện tôi kể
+                            </a> on&nbsp;
+                            <a href="https://www.facebook.com/chuyentoikevetoi/posts/134998843532792">
+                                1 Tháng 12 2015
+                            </a>
+                        </blockquote>
+                    </div>
+                </div>-->
             </div>
         </div>
         <div class="col-lg-3 ">
