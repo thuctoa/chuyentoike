@@ -100,7 +100,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             </p>
                         </div>
                         <div class="col-lg-6">
-                            <img src="../uploads/<?=$books[$id]['img']?>" width="100px;" height="80px;">
+                            <img src="../uploads/<?=$books[$id]['img']?>" class="anhminhhoa-dau">
                         </div>
                     </a>
                 </div>
@@ -140,7 +140,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                 </p>
                             </div>
                             <div class="col-lg-5">
-                                <img src="../uploads/<?=$book['img']?>" width="80px;" height="70px;">
+                                <img src="../uploads/<?=$book['img']?>" class="anhminhhoa">
                             </div>
                         </a>
                         <?php
