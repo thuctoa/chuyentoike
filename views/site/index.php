@@ -45,7 +45,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                      data-href="<?=$actual_link?>" 
                      data-width="600" 
                      data-order-by="social"
-                     data-numposts="5">
+                     data-numposts="100">
                 </div>
             </div>
         </div>
