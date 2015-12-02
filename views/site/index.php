@@ -90,17 +90,17 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 }
                 if($id!=''){
                 ?>
-                <div class="row">
+                <div class="row anhminhhoa-dau">
                     <a href="?baiviet=<?=$id?>">
-                        <div class="col-lg-6" style="color: <?=$mauchu[$id%4]?>;margin-top: 0px;">
+                        <div class="col-lg-7" style="color: <?=$mauchu[$id%4]?>;margin-top: 0px;">
                             <p>
                                 <?php
                                     echo $books[$id]['title'];
                                 ?>
                             </p>
                         </div>
-                        <div class="col-lg-6">
-                            <img src="../uploads/<?=$books[$id]['img']?>" class="anhminhhoa-dau">
+                        <div class="col-lg-5">
+                            <img src="../uploads/<?=$books[$id]['img']?>" class="anhminhhoa">
                         </div>
                     </a>
                 </div>
@@ -120,7 +120,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                 echo date('m-d-Y H:m:s', $books[$id]['time_new']);
                             ?>
                 </p>
-                <hr>
                 <?php
                 }
                 $i=0;
@@ -160,7 +159,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                 echo date('m-d-Y H:m:s', $book['time_new']);
                             ?>
                     </p>
-                    <hr>
                 <?php
                     }
                     $i++;
