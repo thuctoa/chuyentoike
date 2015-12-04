@@ -47,7 +47,6 @@
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
     background-color: #00AEE8;
     color: white;
-    font-weight: bold;
 }
 .navbar-default .navbar-nav > li > a{
     color: #f05;
@@ -60,10 +59,9 @@
     width: 80px;
     height: 80px;
     margin-left: -10px;
-    position: relative;
     
 }
 .anhminhhoa-dau{
     border: 1px solid #ff6b00;
-    padding: 30px 0px;
+    padding: 30px 0;
 }
