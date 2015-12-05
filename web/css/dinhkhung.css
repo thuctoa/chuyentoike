@@ -1,24 +1,27 @@
 .wrap{
     margin: 0;
-    background: #e9eaed;
+    background: #f1f1f1;
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
 }
 @font-face{
 	font-family:"VNI-Coronet-local";
-	src:url("../fonts/vni.common.VCORONET.ttf");
+	src:url("../fonts/vni.common.VCORONET.ttf") format('truetype');
 }
 .noidung,.tintuc{
     background: #FFF;
     word-wrap: break-word;
     border: 1px solid #eeeeee;
+    
 }
 .noidung{
     font-size: 15px;
     padding: 15px;
+    margin-right: -10px;
 }
 .tintuc{
     font-size: 12px;
     padding: 0 16px;
+    margin-left: -10px;
 }
 .menu{
     background-color: white;
@@ -49,7 +52,7 @@
     color: #008e00;
 }
 .anhminhhoa{
-    width: 100px;
+    width: 150px;
     height: 80px;
 }
 .tincuthe{

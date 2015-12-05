@@ -5,7 +5,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <div class="site-index">
     <div class="row">
-        <div class="col-lg-8 ">
+        <div class="col-lg-7 ">
             <div class="noidung">
                 <?php 
                 $id = '';
@@ -79,7 +79,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 </div>-->
             </div>
         </div>
-        <div class="col-lg-4 ">
+        <div class="col-lg-5 ">
             <div class="tintuc">
                 <?php 
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
