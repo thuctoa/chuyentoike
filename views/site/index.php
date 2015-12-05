@@ -113,7 +113,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 <?php
                         if(Yii::$app->user->can('permission_monitor')){
                 ?>
-                        <a href="/book/update?id=<?=$id?>" 
+                        <a href="/book/update.html?id=<?=$id?>" 
                             class="pull-right"
                             title="Update" aria-label="Update" data-pjax="0">
                             <span class="glyphicon glyphicon-pencil"></span>
@@ -155,7 +155,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         <?php
                             if(Yii::$app->user->can('permission_monitor')){
                         ?>
-                        <a href="/book/update?id=<?=$book['id']?>" 
+                        <a href="/book/update.html?id=<?=$book['id']?>" 
                             class="pull-right"
                             title="Update" aria-label="Update" data-pjax="0">
                             <span class="glyphicon glyphicon-pencil"></span>
