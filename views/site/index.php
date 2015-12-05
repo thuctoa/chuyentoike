@@ -5,7 +5,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <div class="site-index">
     <div class="row">
-        <div class="col-lg-9 ">
+        <div class="col-lg-8 ">
             <div class="noidung">
                 <?php 
                 $id = '';
@@ -13,7 +13,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                      $id=$_GET['baiviet'];
                      foreach ($books as $book){
                          if($id==$book['id']){
-                             echo '<h1>'.$book['title'].'</h1>';
+                             echo '<h1 class="tieude-noidung">'.$book['title'].'</h1>';
                              echo $book['description'];
                              break;
                          }
@@ -21,7 +21,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                      }
                 }
                 else{
-                    echo '<h1>'.current($books)['title'].'</h1>';
+                    echo '<h1 class="tieude-noidung" >'.current($books)['title'].'</h1>';
                     echo current($books)['description'];
                 }
                 ?>
@@ -79,7 +79,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 </div>-->
             </div>
         </div>
-        <div class="col-lg-3 ">
+        <div class="col-lg-4 ">
             <div class="tintuc">
                 <?php 
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -90,23 +90,29 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 }
                 if($id!=''){
                 ?>
-                <div class="row anhminhhoa-dau">
+                <div class="row tincuthe-dau">
                     <a href="?baiviet=<?=$id?>">
-                        <div class="col-lg-7" style="color: <?=$mauchu[$id%4]?>;margin-top: 0px;">
-                            <p>
+                        <div class="col-lg-4">
+                            <img src="../uploads/<?=$books[$id]['img']?>" class="anhminhhoa">
+                        </div>
+                        <div class="col-lg-8" >
+                            <p class="tieude-tin">
                                 <?php
                                     echo $books[$id]['title'];
                                 ?>
                             </p>
-                        </div>
-                        <div class="col-lg-5">
-                            <img src="../uploads/<?=$books[$id]['img']?>" class="anhminhhoa">
+                            <p class="thoigian-tin">
+                                <?php
+                                    echo date('m-d-Y H:m:s', $books[$id]['time_new']);
+                                ?>
+                            </p>
+                           
                         </div>
                     </a>
                 </div>
                 <?php
-                            if(Yii::$app->user->can('permission_monitor')){
-                        ?>
+                        if(Yii::$app->user->can('permission_monitor')){
+                ?>
                         <a href="/book/update?id=<?=$id?>" 
                             class="pull-right"
                             title="Update" aria-label="Update" data-pjax="0">
@@ -115,11 +121,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 <?php
                     }
                 ?>
-                <p style="color: #aaaaaa; margin: -30px 0 20px 0;top: -12px; position: relative;">
-                            <?php
-                                echo date('m-d-Y H:m:s', $books[$id]['time_new']);
-                            ?>
-                </p>
+                <hr>
+               
+                
                 <?php
                 }
                 $i=0;
@@ -129,18 +133,24 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     }
                     if($key!=$id){
                 ?>
-                    <div class="row">
+                    <div class="row tincuthe">
                         <a href="?baiviet=<?=$book['id']?>">
-                            <div class="col-lg-7" style="color: <?=$mauchu[$key%4]?>;">
-                                <p>
+                            <div class="col-lg-4">
+                                <img src="../uploads/<?=$book['img']?>" class="anhminhhoa">
+                            </div>
+                            <div class="col-lg-8" >
+                                <p class="tieude-tin">
                                     <?php
                                         echo $book['title'];
                                     ?>
                                 </p>
+                                <p class="thoigian-tin">
+                                    <?php
+                                        echo date('m-d-Y H:m:s', $book['time_new']);
+                                    ?>
+                                </p>
                             </div>
-                            <div class="col-lg-5">
-                                <img src="../uploads/<?=$book['img']?>" class="anhminhhoa">
-                            </div>
+                            
                         </a>
                         <?php
                             if(Yii::$app->user->can('permission_monitor')){
@@ -154,11 +164,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             }
                         ?>
                     </div>
-                    <p style="color: #aaaaaa; margin: 0px 0 20px 0; position: relative;top: -12px;">
-                            <?php
-                                echo date('m-d-Y H:m:s', $book['time_new']);
-                            ?>
-                    </p>
+                    
                 <?php
                     }
                     $i++;
