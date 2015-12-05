@@ -3,6 +3,10 @@
     background: #e9eaed;
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
 }
+@font-face{
+	font-family:"VNI-Coronet-local";
+	src:url("../fonts/vni.common.VCORONET.ttf");
+}
 .noidung,.tintuc{
     background: #FFF;
     word-wrap: break-word;
@@ -64,7 +68,7 @@
     margin-bottom: 2px;
     overflow: hidden;
     cursor: pointer;
-    font-family: VNI-coronet;
+    font-family: VNI-Coronet-local;
 }
 .thoigian-tin{
     color: #767676;
@@ -74,5 +78,5 @@
     text-align: center;
     line-height: normal;
     word-wrap: break-word;
-    font-family: VNI-coronet;
+   font-family: VNI-Coronet-local;
 }
