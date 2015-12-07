@@ -1,6 +1,6 @@
 <?php
 $this->title = Yii::t('app','Chuyện tôi kể');
-//$this->params['breadcrumbs'][] = $this->title;
+//$this->paralg['breadcrumbs'][] = $this->title;
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <div class="site-index">
@@ -14,7 +14,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                      foreach ($books as $book){
                          if($id==$book['id']){
                              echo '<h1 class="tieude-noidung">'.$book['title'].'</h1>';
-                             echo $book['description'];
+                             echo '<div class="body-noidung" >'.current($books)['description'].'</div>';
                              break;
                          }
 
@@ -22,7 +22,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 }
                 else{
                     echo '<h1 class="tieude-noidung" >'.current($books)['title'].'</h1>';
-                    echo current($books)['description'];
+                    echo '<div class="body-noidung" >'.current($books)['description'].'</div>';
                 }
                 ?>
                 <!--nutlike-->
@@ -81,6 +81,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         </div>
         <div class="col-lg-4 ">
             <div class="tintuc">
+                <img src="../img/G1.jpg" class=" anhdau">
                 <?php 
                 date_default_timezone_set('Asia/Ho_Chi_Minh');
                 $mauchu=['#f05','#0a0','#007197','#ff6b00'];
@@ -92,10 +93,10 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 ?>
                 <div class="row tincuthe-dau">
                     <a href="?baiviet=<?=$id?>">
-                        <div class="col-lg-5">
+                        <div class="col-lg-4">
                             <img src="../uploads/<?=$books[$id]['img']?>" class="anhminhhoa">
                         </div>
-                        <div class="col-lg-7" >
+                        <div class="col-lg-8" >
                             <p class="tieude-tin">
                                 <?php
                                     echo $books[$id]['title'];
@@ -135,10 +136,10 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 ?>
                     <div class="row tincuthe">
                         <a href="?baiviet=<?=$book['id']?>">
-                            <div class="col-lg-5">
+                            <div class="col-lg-4">
                                 <img src="../uploads/<?=$book['img']?>" class="anhminhhoa">
                             </div>
-                            <div class="col-lg-7" >
+                            <div class="col-lg-8" >
                                 <p class="tieude-tin">
                                     <?php
                                         echo $book['title'];
