@@ -21,24 +21,6 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1502054410090394',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/vi_VN/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
@@ -71,10 +53,32 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $items,
             ]);
+            $valsreach="";
+            if(isset($_GET['BookSearch'])){
+                $valsreach=$_GET['BookSearch']['title'];
+            }
+            echo '<form class="navbar-form navbar-left " role="search"  action="/" method="get" >
+                    <div class="row ">
+                            <div class="input-group stylish-input-group">
+                                <input 
+                                    type="text"
+                                    class="form-control" 
+                                    style="width:500px;"
+                                    placeholder="Tìm kiếm bài viết ..."
+                                    name="BookSearch[title]"
+                                    value="'.$valsreach.'"
+                                >
+                                <span class="input-group-addon">
+                                    <button type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>  
+                                </span>
+                            </div>
+                    </div>
+                </form>';
             NavBar::end();
         ?>
-        
-        <div class="container">
+        <div class="content">
             <?php 
                 echo Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -84,15 +88,11 @@ AppAsset::register($this);
         </div>
         
     </div>
-
     <footer class="footer">
         <div class="container">
             <span id="chuyentoike">
                 &copy; Chuyện tôi kể <?= date('Y') ?>
             </span>
-<!--            <div  id="language-selector" class="pull-right">
-                <?php //echo \app\components\widgets\LanguageSelector::widget(); ?>
-            </div>-->
         </div>
     </footer>
 

@@ -1,45 +1,46 @@
-.wrap{
-    margin: 0;
-    background: #f1f1f1;
-    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
-}
-.row{
-    margin: 0;
-    padding: 0;
-}
-
 @font-face{
 	font-family:"VNI-Coronet-local";
 	src:url("../fonts/vni.common.VCORONET.ttf") format('truetype');
 }
-.noidung,.tintuc{
-    background: #FFF;
+.wrap{
+    margin: 0;
+    padding: 0;
+    background: #f1f1f1;
+    font-family: Roboto,arial,sans-serif;
+    padding-top: 60px;
     word-wrap: break-word;
-    border: 1px solid #eeeeee;
-}
-.noidung{
     font-size: 15px;
-    padding: 0 15px;
-    margin-right: -11px;
-    margin-left: -34px;
 }
-.tintuc{
-    font-size: 12px;
-    padding: 0px;
-    margin-left: -11px;
-    margin-right: -34px;
+.container{
+    width: 100%
 }
 .menu{
     background-color: white;
 }
+
+#imaginary_container{
+    margin-top:20%; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
 .navbar-brand > img{
     margin-top: -12px;
     
 }
-.site-index{
-    background-color: #eeeeee;
+.content{
+    width: 100%;
 }
-
 .footer{
     height: 40px;
     margin: 0px;
@@ -49,59 +50,87 @@
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
     background-color: #00AEE8;
     color: white;
+    font-weight: bold;
 }
 .navbar-default .navbar-nav > li > a{
     color: #f05;
     font-size: 12px;
 }
-#chuyentoike{
-    color: #008e00;
+.row{
+    margin: 0;
+    padding: 0;
 }
-.anhminhhoa{
-    width: 130px;
-    height: 70px;
-    border-width:1px;	
-    border-style:inset;
-    //border-color: #333;
+.noidung{
+    min-height: 500px;
+    background-color: #FFF;
+    margin-left: -12px;
+    margin-right:  -10px;
+    padding: 0 15px;
 }
-.tincuthe{
-   padding: 8px 0;
+.bantin{
+    min-height: 500px;
+    background-color: #FFF;
+    margin-left: -10px;
+    margin-right:  -13px;
 }
-/*.tincuthe-dau{
-    padding: 48px 0 36px 0;
+/*.tieude-chinh{
+    font-size: 36px;
+    font-family: VNI-Coronet-local;
+    font-weight: bold;
+}
+.noidung-chinh{
+    font-family: VNI-Coronet-local;
+    font-size: 32px;
+    color: #444444;
 }*/
 .tieude-tin{
     color: #333;
-    font-size: 22px;
-    font-weight: bold;
-    display: block;
-    line-height: 1.2;
-    max-height: 2.4em;
-    margin-bottom: 2px;
-    overflow: hidden;
-    cursor: pointer;
-    font-family: VNI-Coronet-local;
+    font-size: 13px;
+    font-weight: 600;
+    
 }
-.thoigian-tin{
+.thoigian{
     color: #767676;
     font-size: 11px;
 }
-.tieude-noidung{
+.anhminhhoa{
+    width: 120px;
+    height: 70px;
+    margin-left: -15px;
+}
+.bantin{
+    padding: 8px 16px;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border: none;
+    padding: 8px 0;
+}
+.timkiem{
+    width: 500px;
+}
+.table>thead{
+    display: none;
+}
+.tin-dau{
+    margin-top: 10px;
+}
+.tin{
+    margin: 16px 0;
+}
+.anhchinh{
+    margin-top: 15px;
     text-align: center;
-    line-height: normal;
-    word-wrap: break-word;
-    font-family: VNI-Coronet-local;
-}
-.body-noidung{
-    word-wrap: break-word;
-    font-family: VNI-Coronet-local;
-    font-size: 28px;
-    line-height: normal;
-}
-.container{
-    width: 98vw;
-}
-.anhdau{
     width: 100%;
-    padding: 15px;
+    height: 110px;
+}
+.trangchu{
+    width: 80%;
+    min-height: 500px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.col-xs-15{
+    width:20%;
+    height: 200px;
 }

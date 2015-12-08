@@ -12,6 +12,8 @@ use app\models\SignupForm;
 use app\models\PasswordResetRequestForm;
 use app\models\ResetPasswordForm;
 use app\models\Book;
+use app\models\BookSearch;
+use yii\data\Pagination;
 
 class SiteController extends Controller
 {
@@ -63,12 +65,30 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $books= Book::find()
-                ->indexBy('id')
-                ->orderBy(['time_new' => SORT_DESC])
-                ->all();
+        $searchModel = new BookSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize=5;
+        
+        $baiviet=[];
+        
+        if(isset($_GET['baiviet'])){
+            $baiviet=  Book::findOne($_GET['baiviet']);
+        }
+        
+        $query = Book::find()->orderBy([
+	       'time_new'=>SORT_DESC,
+		]);
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=>10]);
+        $models = $query->offset($pages->offset)
+        ->limit($pages->limit)
+        ->all();
         return $this->render('index', [
-            'books'=>$books,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'baiviet'=>$baiviet,
+            'models' => $models,
+            'pages' => $pages,
         ]);
     }
     

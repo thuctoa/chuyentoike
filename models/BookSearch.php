@@ -41,14 +41,15 @@ class BookSearch extends Book
      */
     public function search($params)
     {
-        $query = Book::find();
-
+        $query = Book::find()->orderBy([
+	       'time_new'=>SORT_DESC,
+		]);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
         $this->load($params);
-
+        
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
@@ -63,7 +64,8 @@ class BookSearch extends Book
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'isbn', $this->isbn]);
-
+        
         return $dataProvider;
     }
+    
 }
