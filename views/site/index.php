@@ -57,6 +57,14 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         <p class="thoigian">
                         <?= gmdate("d-m-Y H:i:s",$baiviet['time_new'])?>
                         </p>
+                        <?php
+                            if(Yii::$app->user->can('permission_monitor')){
+                        ?>
+                        <a href="/book/update.html?id=<?=$baiviet['id']?>">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                        <?php
+                        }?>
                     </div>
                     
                 </div>
