@@ -25,13 +25,14 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => Html::img('/img/logo-nav.png'),
-                'brandUrl' => Yii::$app->homeUrl,
+                'brandLabel' => '<span onclick="menudoc();" class="glyphicon glyphicon-menu-hamburger bagach" aria-hidden="true"></span>',
+                'brandUrl' => '#',
                 'options' => [
-                    'class' => 'navbar-default navbar-fixed-top menu',
+                    'class' => 'navbar-default navbar-fixed-top menu ',
+                    
                 ],
             ]);
-            
+            echo '<a class="navbar-left anhlogo" href="'.Yii::$app->homeUrl.'">'.Html::img('/img/logo-nav.png').'</a>';
             $items = [
                     ['label' => Yii::t('app','Trang chủ'), 'url' => ['/site/index']],
                     ['label' => Yii::t('app','Giới thiệu'), 'url' => ['/site/about']],
@@ -78,7 +79,35 @@ AppAsset::register($this);
                 </form>';
             NavBar::end();
         ?>
-        <div class="content">
+        <div class="menudoc" id="menudoc">
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation" class="active">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-home">
+                        
+                        </span>
+                        Chuyện tình yêu
+                    </a></li>
+                <li role="presentation">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-globe">
+                        
+                        </span>
+                        Chuyện của tôi
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-apple">
+                        
+                        </span>
+                        Chuyện tự sự
+                    </a>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="content" id="content">
             <?php 
                 echo Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],

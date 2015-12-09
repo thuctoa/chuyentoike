@@ -22,6 +22,9 @@ class AppAsset extends AssetBundle
         'css/languages.min.css',
         'css/dinhkhung.css',
     ];
+    public $js= [
+        'js/site.js',
+    ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',

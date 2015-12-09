@@ -105,9 +105,6 @@
     border: none;
     padding: 8px 0;
 }
-.timkiem{
-    width: 500px;
-}
 .table>thead{
     display: none;
 }
@@ -123,14 +120,57 @@
     width: 100%;
     height: 110px;
 }
-.trangchu{
-    width: 80%;
+#trangchu{
+    width: 82%;
     min-height: 500px;
     background-color: #fff;
     margin: 0 auto;
+    padding: 15px;
 }
-
+#content{
+    width: 100%;
+   // float: right;
+}
 .col-xs-15{
     width:20%;
     height: 200px;
+}
+.bagach{
+    padding:0px 15px 10px 15px;
+    font-size: 12px;
+    color: #ccc;
+    
+}
+.bagach:hover{
+    background-color: transparent;
+    color: #333;
+}
+.menudoc{
+    position: fixed;
+    left: 0;
+    width: 200px;
+    background: #fff;
+    border: 0;
+    top:50px;
+    padding: 15px 20px;
+    min-height: 100vh;
+    font-size: 13px;
+    border-right:  1px solid #ccc;
+}
+.menudoc>ul>li>a{
+    border-radius: 0;
+    padding: 4px 15px; 
+    color: #222;
+}
+.menudoc>.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+    background: #cc181e;
+    color: #fff;
+}
+.anhlogo{
+    margin-top: 2px;
+}
+.tieude-tin-trangchu{
+   color: #167ac6;
+   font-size: 13px;
+   font-weight: bold;
 }

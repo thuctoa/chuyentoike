@@ -14,7 +14,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     ?>
         <div class="col-lg-8 ">
             <div class="noidung"> 
-                
                 <div class="row">
                     <div class="col-sm-9">
                         <h1 class="text-center tieude-chinh">
@@ -93,7 +92,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     <?php
     }else if(isset($_GET['BookSearch'])){
     ?>
-    <div class="trangchu"> 
+    <div class="trangchu" id="trangchu"> 
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -114,7 +113,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     'value' => function($data){
                         $url = $data->linkurl;
                         return Html::a(
-                                '<p class="tieude-tin">'.$data->title.'</p>'.
+                                '<p class="tieude-tin-trangchu">'.$data->title.'</p>'.
                                 '<p class="thoigian">'.
                                 gmdate("d-m-Y H:i:s", $data->time_new).
                                 '</p>',
@@ -129,7 +128,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     <?php 
     }else {
     ?>
-            <div class="trangchu"> 
+            <div class="trangchu" id="trangchu"> 
                 <div class="row">
             <?php
                 $i=0;
@@ -138,7 +137,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 <div class="col-xs-2 col-xs-15">
                     <a href="?baiviet=<?=$model['id']?>">
                     <img src="../uploads/<?=$model['img']?>" class="anhchinh">
-                    <p class="tieude-tin"><?=$model['title']?></p>
+                    <p class="tieude-tin-trangchu"><?=$model['title']?></p>
                     <p class="thoigian"><?=gmdate("d-m-Y H:i:s", $model['time_new'])?></p>
                     </a>
                 </div>
