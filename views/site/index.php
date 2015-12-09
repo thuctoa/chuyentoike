@@ -134,7 +134,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 $i=0;
                 foreach ($models as $model) {
             ?>
-                <div class="col-xs-2 col-xs-15">
+                <div class="col-lg-2 col-lg-15">
                     <a href="?baiviet=<?=$model['id']?>">
                     <img src="../uploads/<?=$model['img']?>" class="anhchinh">
                     <p class="tieude-tin-trangchu"><?=$model['title']?></p>

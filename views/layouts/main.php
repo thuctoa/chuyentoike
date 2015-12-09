@@ -25,17 +25,16 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => '<span onclick="menudoc();" class="glyphicon glyphicon-menu-hamburger bagach" aria-hidden="true"></span>',
-                'brandUrl' => '#',
+                'brandLabel' => Html::img('/img/logo-nav.png'),
+                'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-default navbar-fixed-top menu ',
                     
                 ],
             ]);
-            echo '<a class="navbar-left anhlogo" href="'.Yii::$app->homeUrl.'">'.Html::img('/img/logo-nav.png').'</a>';
             $items = [
                     ['label' => Yii::t('app','Trang chủ'), 'url' => ['/site/index']],
-                    ['label' => Yii::t('app','Giới thiệu'), 'url' => ['/site/about']],
+                    //['label' => Yii::t('app','Giới thiệu'), 'url' => ['/site/about']],
                     ['label' => Yii::t('app','Liên hệ'), 'url' => ['/site/contact']],
                   
                     Yii::$app->user->isGuest ?
@@ -60,16 +59,15 @@ AppAsset::register($this);
             }
             echo '<form class="navbar-form navbar-left " role="search"  action="/" method="get" >
                     <div class="row ">
-                            <div class="input-group stylish-input-group">
+                            <div class="input-group stylish-input-group" id="timkiem">
                                 <input 
                                     type="text"
                                     class="form-control" 
-                                    style="width:500px;"
                                     placeholder="Tìm kiếm bài viết ..."
                                     name="BookSearch[title]"
                                     value="'.$valsreach.'"
                                 >
-                                <span class="input-group-addon">
+                                <span class="input-group-addon"">
                                     <button type="submit">
                                         <span class="glyphicon glyphicon-search"></span>
                                     </button>  
@@ -79,34 +77,7 @@ AppAsset::register($this);
                 </form>';
             NavBar::end();
         ?>
-        <div class="menudoc" id="menudoc">
-            <ul class="nav nav-pills nav-stacked">
-                <li role="presentation" class="active">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-home">
-                        
-                        </span>
-                        Chuyện tình yêu
-                    </a></li>
-                <li role="presentation">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-globe">
-                        
-                        </span>
-                        Chuyện của tôi
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-apple">
-                        
-                        </span>
-                        Chuyện tự sự
-                    </a>
-                </li>
-            </ul>
-            
-        </div>
+       
         <div class="content" id="content">
             <?php 
                 echo Breadcrumbs::widget([

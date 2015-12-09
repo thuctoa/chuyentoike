@@ -131,8 +131,9 @@
     width: 100%;
    // float: right;
 }
-.col-xs-15{
-    width:20%;
+.col-lg-15{
+    width: 20%;
+    min-width:200px;
     height: 200px;
 }
 .bagach{
@@ -173,4 +174,20 @@
    color: #167ac6;
    font-size: 13px;
    font-weight: bold;
+}
+#timkiem{
+    width: 200%;
+}
+#timkiem>input{
+    height: 30px;
+    border-radius: 0;
+}
+#timkiem>span{
+    padding: 0;
+    border-radius: 0;
+}
+#timkiem>input:focus{
+    border: 1px solid #4d90fe;
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
 }
