@@ -23,20 +23,40 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
     <div class="wrap">
+        
         <?php
             NavBar::begin([
                 'brandLabel' => Html::img('/img/logo-nav.png'),
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-default navbar-fixed-top menu ',
-                    
                 ],
+                
             ]);
+            $valsreach="";
+            if(isset($_GET['BookSearch'])){
+                $valsreach=$_GET['BookSearch']['title'];
+            }
+            echo '<form class="navbar-form navbar-left" role="search"  action="/" method="get" >
+                    <div class="input-group stylish-input-group" id="timkiem">
+                        <input 
+                            type="text"
+                            class="form-control" 
+                            placeholder="Tìm kiếm bài viết ..."
+                            name="BookSearch[title]"
+                            value="'.$valsreach.'"
+                        >
+                        <span class="input-group-addon"">
+                            <button type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>  
+                        </span>
+                    </div>
+                </form>';
             $items = [
-                    ['label' => Yii::t('app','Trang chủ'), 'url' => ['/site/index']],
+                   // ['label' => Yii::t('app','Trang chủ'), 'url' => ['/site/index']],
                     //['label' => Yii::t('app','Giới thiệu'), 'url' => ['/site/about']],
-                    ['label' => Yii::t('app','Liên hệ'), 'url' => ['/site/contact']],
-                  
+                    //['label' => Yii::t('app','Liên hệ'), 'url' => ['/site/contact']],
                     Yii::$app->user->isGuest ?
                         ['label' => Yii::t('app','Đăng nhập'), 'url' => ['/site/login']] :
                         ['label' => Yii::t('app','Đăng xuất').' (' . Yii::$app->user->identity->username . ')',
@@ -53,31 +73,10 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $items,
             ]);
-            $valsreach="";
-            if(isset($_GET['BookSearch'])){
-                $valsreach=$_GET['BookSearch']['title'];
-            }
-            echo '<form class="navbar-form navbar-left " role="search"  action="/" method="get" >
-                    <div class="row ">
-                            <div class="input-group stylish-input-group" id="timkiem">
-                                <input 
-                                    type="text"
-                                    class="form-control" 
-                                    placeholder="Tìm kiếm bài viết ..."
-                                    name="BookSearch[title]"
-                                    value="'.$valsreach.'"
-                                >
-                                <span class="input-group-addon"">
-                                    <button type="submit">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>  
-                                </span>
-                            </div>
-                    </div>
-                </form>';
+            
+            
             NavBar::end();
         ?>
-       
         <div class="content" id="content">
             <?php 
                 echo Breadcrumbs::widget([
