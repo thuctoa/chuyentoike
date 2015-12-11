@@ -137,32 +137,31 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     }else {
     ?>
             <div class="trangchu" id="trangchu"> 
-                <div class="row">
-            <?php
-                $i=0;
-                foreach ($models as $model) {
-            ?>
-                <div class="col-lg-2 col-lg-15">
-                    <a href="?baiviet=<?=$model['id']?>">
-                    <img src="../uploads/<?=$model['img']?>" class="anhchinh">
-                    <p class="tieude-tin-trangchu"><?=$model['title']?></p>
-                    <p class="thoigian"><?=gmdate("d-m-Y H:i:s", $model['time_new'])?></p>
-                    </a>
-                </div>
-            <?php
-                    $i++;
-                    if($i%5==0){
-                        echo '</div><hr><div class="row">';
-                    }
-                }
-                echo '</div>';
-                // display pagination
-                echo LinkPager::widget([
-                    'pagination' => $pages,
-                ]);
-            ?>
-                
-            </div>
+               <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'layout'=>"{items}\n{pager}",
+                'tableOptions' =>['class' => 'table table-trangchu'],
+                'columns' => [
+                    [
+                        'value' => function($data) {
+                            $url = $data->linkurl;
+                            return 
+                                    Html::a(Html::img($data->imageurl,['width'=>160,'height'=>110]),
+                                    $url, ['title' => 'Xem bài viết'] ).
+                                    Html::a(
+                                    '<p class="tieude-tin-trangchu">'.$data->title.'</p>'.
+                                    '<p class="thoigian">'.
+                                    gmdate("d-m-Y H:i:s", $data->time_new).
+                                    '</p>',
+                                    $url, ['title' => 'Xem bài viết']
+                                    );
+                            },
+                        'format' => 'raw',
+                        'contentOptions'=>['style'=>'width: 160px;'], 
+                    ],
+                ],
+            ]); ?>
     <?php
         }?>
 </div>
