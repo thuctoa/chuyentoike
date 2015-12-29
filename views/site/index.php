@@ -14,7 +14,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     ?>
         <div class="col-lg-8 ">
             <div class="noidung"> 
-                <div class="row">
+                <div class="row modau">
                     <div class="col-sm-8">
                         <h1 class="text-center tieude-chinh">
                             <?=$baiviet['title']?>
@@ -27,7 +27,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         <img src="../uploads/<?=$baiviet['img']?>" class="anhchinh">
                     </div>
                 </div>
-                <hr>
                 
                 <div class="noidung-chinh">
                     
