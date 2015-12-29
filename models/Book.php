@@ -36,6 +36,7 @@ class Book extends \yii\db\ActiveRecord
             [['time_new'], 'integer'],
             [['title'], 'string', 'max' => 64],
             [['description'], 'string'],
+            [['body'], 'string'],
             [['isbn'], 'string', 'max' => 32],
             [['img'], 'file'],
             [['user_id'], 'exist', 'targetClass'=>'\app\models\User', 'targetAttribute'=>'id', 'message'=>Yii::t('app','This user doesn\'t exist')],
@@ -50,9 +51,10 @@ class Book extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'title' => Yii::t('app', 'Tìm kiếm bài viết'),
-            'description' => Yii::t('app', 'Description'),
-            'user_id' => Yii::t('app', 'User'),
-            'isbn' => Yii::t('app', 'Isbn'),
+            'description' => Yii::t('app', 'Tóm tắt'),
+            'body' => Yii::t('app', 'Nội dung'),
+            'user_id' => Yii::t('app', 'Người dùng'),
+            'isbn' => Yii::t('app', 'Loại'),
             'time_new' => Yii::t('app', 'Thời gian cập nhật'),
             'img' => Yii::t('app', 'Ảnh minh họa'),
         ];

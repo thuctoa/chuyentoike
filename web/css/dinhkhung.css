@@ -17,6 +17,7 @@
 .menu{
     background-color: white;
 }
+
 .stylish-input-group .input-group-addon{
     background: white !important; 
 }
@@ -61,7 +62,11 @@
     background-color: #FFF;
     margin-left: -12px;
     margin-right:  -10px;
-    padding: 0 15px;
+    padding: 0 45px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: Cambria;
+    font-size: 18px;
 }
 .bantin{
     min-height: 500px;
@@ -101,11 +106,10 @@
     margin: 16px 0;
 }
 .anhchinh{
-    margin-top: 15px;
+    margin: 15px;
     text-align: center;
     width: 100%;
-    height: 110px;
-   
+    height: 100%;
 }
 #trangchu{
     width: 90%;
@@ -182,4 +186,8 @@
     float: left;
     margin:1.2%;
     height: 200px;
+}
+.tomtat{
+    padding: 10px;
+    font-size: 17px;
 }

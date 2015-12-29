@@ -29,10 +29,13 @@ use dosamigos\ckeditor\CKEditor;
     <?= $form->field($model, 'img')->fileInput() ?>
 
     <?= $form->field($model, 'description')->widget(CKEditor::className(), [
+            'options' => ['rows' => 6],
+            'preset' => 'advanced'
+    ]) ?>
+    <?= $form->field($model, 'body')->widget(CKEditor::className(), [
             'options' => ['rows' => 12],
             'preset' => 'advanced'
     ]) ?>
-    
     
     <?php
         if ( Yii::$app->user->can('permission_admin') ){
