@@ -34,7 +34,12 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         <?=$baiviet['body']?>
                     </p>
                     
-
+                    <div class="fb-follow" 
+                         data-href="https://www.facebook.com/chuyentoikevetoi/" 
+                         data-layout="standard" 
+                         data-show-faces="true">
+                        
+                    </div>
                     <div class="fb-share-button" 
                          data-href="<?=$actual_link?>" 
                          data-layout="button_count">
