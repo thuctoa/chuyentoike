@@ -33,6 +33,22 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <p >
                         <?=$baiviet['body']?>
                     </p>
+                    
+
+                    <div class="fb-share-button" 
+                         data-href="<?=$actual_link?>" 
+                         data-layout="button_count">
+                        
+                    </div>
+                    <div 
+                        class="fb-comments" 
+                        data-href="<?=$actual_link?>" 
+                        data-numposts="5"
+                        width="100%"
+                        data-order-by="reverse_time"
+                    >
+                       
+                    </div>
                 </div>
             </div>
         </div>
