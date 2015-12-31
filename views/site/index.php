@@ -30,8 +30,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <p >
                         <?=$baiviet['body']?>
                     </p>
+                    
                     <iframe
-                        src="//www.facebook.com/plugins/like?href=http%3A%2F%2Fchuyentoike.com%2F&amp;kid_directed_site=true"
+                        src="//www.facebook.com/plugins/like?href=<?=urlencode($actual_link)?>%2F&amp;kid_directed_site=true"
                         scrolling="no"
                         frameborder="0"
                         style="border:none; overflow:auto; width:450px; height:30px"
