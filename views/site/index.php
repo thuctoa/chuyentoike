@@ -15,6 +15,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         <div class="col-lg-8 ">
             <div class="noidung"> 
                 <div class="row modau">
+                    
                     <h1 class="text-center tieude-chinh">
                         <?=$baiviet['title']?>
                     </h1>
@@ -29,18 +30,26 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <p >
                         <?=$baiviet['body']?>
                     </p>
-                    
+                    <iframe
+                        src="//www.facebook.com/plugins/like?href=http%3A%2F%2Fchuyentoike.com%2F&amp;kid_directed_site=true"
+                        scrolling="no"
+                        frameborder="0"
+                        style="border:none; overflow:auto; width:450px; height:30px"
+                        allowTransparency="true">
+                    </iframe>
+                    <div 
+                        class="fb-share-button" 
+                         data-href="<?=$actual_link?>" 
+                         data-layout="button_count"
+                         >
+                    </div>
                     <div class="fb-follow" 
                          data-href="https://www.facebook.com/chuyentoikevetoi/" 
                          data-layout="standard" 
                          data-show-faces="true">
                         
                     </div>
-                    <div class="fb-share-button" 
-                         data-href="<?=$actual_link?>" 
-                         data-layout="button_count">
-                        
-                    </div>
+                    
                     <div 
                         class="fb-comments" 
                         data-href="<?=$actual_link?>" 
@@ -50,6 +59,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     >
                        
                     </div>
+                   
                 </div>
             </div>
         </div>
