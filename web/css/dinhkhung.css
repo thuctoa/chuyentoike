@@ -200,3 +200,13 @@
     padding-left: 9vw;
     padding-right:  6vw;
 }
+.upanh{
+    padding: 10px;
+    background: white;
+    border: 5px solid #ccc;
+    border-style: outset;
+}
+.upanhcuthe{
+    margin: 10px;
+    border: 1px solid black;
+}
