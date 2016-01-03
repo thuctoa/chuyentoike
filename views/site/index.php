@@ -22,7 +22,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <div class="tomtat">
                         <?=$baiviet['description']?>
                     </div>
-                     <img src="../uploads/<?=$baiviet['img']?>" class="anhchinh">
+                    
                 </div>
                 
                 <div class="noidung-chinh">

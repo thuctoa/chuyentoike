@@ -62,8 +62,6 @@
     background-color: #FFF;
     margin-left: -12px;
     margin-right:  -10px;
-    text-align: justify;
-    text-justify: inter-word;
     font-family: Cambria;
     font-size: 18px;
 }
@@ -190,7 +188,6 @@
     font-size: 17px;
 }
 .modau{
-    background: rgba(120,0,0,0.03);
     padding-left: 9vw;
     padding-right:  6vw;
     border: 1px solid white;
