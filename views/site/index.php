@@ -31,7 +31,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         src="//www.facebook.com/plugins/like?href=<?=urlencode($actual_link)?>%2F&amp;kid_directed_site=true"
                         scrolling="no"
                         frameborder="0"
-                        style="border: none; overflow: auto; width: 500px; height: 60px"
+                        style="border: none; overflow: auto; width: 500px; height: 40px"
                         allowTransparency="true"
                     >
                     </iframe>
@@ -44,7 +44,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <div class="fb-follow" 
                          data-href="https://www.facebook.com/chuyentoikevetoi/" 
                          data-layout="standard" 
-                         data-show-faces="true">
+                         data-show-faces="true"
+                    >
                         
                     </div>
                     
