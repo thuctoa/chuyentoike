@@ -14,15 +14,12 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     ?>
         <div class="col-lg-8 ">
             <div class="noidung"> 
-                <div class="row modau">
+                <div class="modau">
                     
                     <h1 class="text-center tieude-chinh">
                         <?=$baiviet['title']?>
                     </h1>
-                    <div class="tomtat">
-                        <?=$baiviet['description']?>
-                    </div>
-                    
+                    <?=$baiviet['description']?>
                 </div>
                 
                 <div class="noidung-chinh">
