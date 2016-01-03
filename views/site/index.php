@@ -31,7 +31,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         src="//www.facebook.com/plugins/like?href=<?=urlencode($actual_link)?>%2F&amp;kid_directed_site=true"
                         scrolling="no"
                         frameborder="0"
-                        style="border: none; overflow: auto; width: 500px; height: 50px"
+                        style="border: none; overflow: auto; width: 500px; height: 60px"
                         allowTransparency="true"
                     >
                     </iframe>
