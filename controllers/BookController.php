@@ -96,7 +96,7 @@ class BookController extends Controller
             }
             
             if($model->save()){
-                 return $this->redirect(['/site/index']);
+                 return $this->redirect(['/site/index','baiviet'=>$id]);
             }
            
             //return $this->redirect(['view', 'id' => $model->id]);
