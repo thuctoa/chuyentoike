@@ -27,14 +27,12 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <p >
                         <?=$baiviet['body']?>
                     </p>
-                    <iframe
-                        src="//www.facebook.com/plugins/like?href=<?=urlencode($actual_link)?>%2F&amp;kid_directed_site=true"
-                        scrolling="no"
-                        frameborder="0"
-                        style="border: none; overflow: auto; width: 500px; height: 60px"
-                        allowTransparency="true"
+                    <div 
+                        class="fb-like" 
+                        data-href="<?=$actual_link?>" 
+                        data-layout="box_count"
                     >
-                    </iframe>
+                    </div>
                     <div 
                         class="fb-share-button" 
                         data-href="<?=$actual_link?>" 
@@ -43,7 +41,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     </div>
                     <div class="fb-follow" 
                          data-href="https://www.facebook.com/chuyentoikevetoi/" 
-                         data-layout="standard" 
+                         data-layout="box_count" 
                          data-show-faces="true"
                     >
                         

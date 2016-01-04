@@ -62,8 +62,8 @@
     background-color: #FFF;
     margin-left: -12px;
     margin-right:  -10px;
-    font-family: Cambria;
-    font-size: 18px;
+    //font-family: Cambria;
+    font-size: 16px;
 }
 .bantin{
     min-height: 500px;
@@ -201,10 +201,4 @@
 .upanhcuthe{
     margin: 10px;
     border: 1px solid black;
-}
-.fb-follow{
-    top: -40px;
-}
-.fb-share-button{
-    right: -70px;
 }
