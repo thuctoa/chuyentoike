@@ -6,6 +6,12 @@ use yii\widgets\LinkPager;
 $this->title = Yii::t('app','Chuyện tôi kể');
 //$this->paralg['breadcrumbs'][] = $this->title;
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+$data = json_decode(file_get_contents("https://api.facebook.com/method/links.getStats?urls=".$actual_link."&format=json"), true);
+$share_count=$data[0]['share_count'];
+$like_count=$data[0]['like_count'];
+$comment_count=$data[0]['comment_count'];
+$total_count=$data[0]['total_count'];
 ?>
 <div class="row site-index">
     <?php 
@@ -27,28 +33,76 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <p >
                         <?=$baiviet['body']?>
                     </p>
-                    <div class="fb-follow" 
-                        data-href="https://www.facebook.com/chuyentoikevetoi/" 
-                        data-layout="box_count" 
-                        data-show-faces="true"
-                    >
+                    <table class="bangfacebook">
+                        <tr >
+                            <td>
+                                
+                            </td>
+                            <td >
+                                <div class="follow-fb">
+                                    <div class="pluginCountBox">
+                                        <div class="pluginCountBoxTextOnly">
+                                            <span id="u_0_7">
+                                                <span class="pluginCountTextConnected">
+                                                    <?=$share_count?>
+                                                </span> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="pluginCountBoxNub">
+                                        <s></s>
+                                        <i></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <td >
+                                <div class="follow-fb">
+                                    <div class="pluginCountBox">
+                                        <div class="pluginCountBoxTextOnly">
+                                            <span id="u_0_7">
+                                                <span class="pluginCountTextConnected">
+                                                    <?=$like_count?>
+                                                </span> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="pluginCountBoxNub">
+                                        <s></s>
+                                        <i></i>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
                         
-                    </div>
-                    
-                    <div 
-                        class="fb-share-button" 
-                        data-href="<?=$actual_link?>" 
-                        data-layout="box_count"
-                    >
-                    </div>
-                    <iframe
-                        src="//www.facebook.com/plugins/like?href=<?= urlencode($actual_link)?>%2F&amp;
-                        kid_directed_site=true&layout=box_count"
-                        scrolling="yes"
-                        frameborder="0"
-                        style="border:none; overflow:hidden; width:60px; height:80px;"
-                        allowTransparency="true">
-                    </iframe>
+                        <tr>
+                            <td>
+                                <div class="fb-follow" 
+                                    data-href="https://www.facebook.com/chuyentoikevetoi/" 
+                                    data-layout="button" 
+                                    data-show-faces="true"
+                                >
+                                </div>
+                            </td>
+                            <td>
+                                <div 
+                                    class="fb-share-button" 
+                                    data-href="<?=$actual_link?>" 
+                                    data-layout="button"
+                                >
+                                </div>
+                            </td>
+                            <td>
+                                <iframe
+                                    src="//www.facebook.com/plugins/like?href=<?= urlencode($actual_link)?>%2F&amp;
+                                    kid_directed_site=true&layout=button"
+                                    scrolling="no"
+                                    frameborder="0"
+                                    style="border:none; overflow:hidden; width:60px; height:63px;"
+                                    allowTransparency="true">
+                                </iframe>
+                            </td>
+                        </tr>
+                    </table>
                     <div 
                         class="fb-comments" 
                         data-href="<?=$actual_link?>" 
@@ -57,7 +111,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         data-order-by="reverse_time"
                     >
                     </div>
-                    
                     
                 </div>
             </div>

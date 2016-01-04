@@ -208,3 +208,42 @@
 .fb-follow{
     top:-25px;
 }
+.bangfacebook>tbody>tr>td{
+    text-align: center;
+    padding: 0 10px;
+    
+}
+.pluginCountBox {
+    background: #fff;
+    border: 1px solid #9197a3;
+    border-radius: 2px;
+    color: #4e5665;
+    font-size: 13px;
+    height: 30px;
+    margin: 0;
+    min-width: 35px;
+    padding: 6px 1px 2px 3px;
+    text-align: center;
+    white-space: nowrap;
+}
+.pluginCountBoxNub {
+    bottom: 1px;
+    height: 7px;
+    left: 7px;
+    position: relative;
+    width: 0;
+    z-index: 2;
+}
+.pluginCountBoxNub s, .pluginCountBoxNub i {
+    border-color: #9197a3 transparent transparent;
+    border-right: 5px solid transparent;
+    border-style: solid;
+    border-width: 5px;
+    display: block;
+    position: relative;
+}
+.pluginCountBoxNub i {
+    border-top-color: #fff;
+    left: 0;
+    top: -12px;
+}
