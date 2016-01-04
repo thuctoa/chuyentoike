@@ -202,3 +202,9 @@
     margin: 10px;
     border: 1px solid black;
 }
+.fb-share-button{
+    top:-25px;
+}
+.fb-follow{
+    top:-25px;
+}

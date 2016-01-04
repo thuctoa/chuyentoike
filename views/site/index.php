@@ -28,27 +28,27 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         <?=$baiviet['body']?>
                     </p>
                     <div class="fb-follow" 
-                         data-href="https://www.facebook.com/chuyentoikevetoi/" 
-                         data-layout="box_count" 
-                         data-show-faces="true"
+                        data-href="https://www.facebook.com/chuyentoikevetoi/" 
+                        data-layout="box_count" 
+                        data-show-faces="true"
                     >
                         
                     </div>
                     
-                    
-                    <div 
-                        class="fb-like" 
-                        data-href="<?=$actual_link?>" 
-                        data-layout="box_count"
-                    >
-                    </div>
                     <div 
                         class="fb-share-button" 
                         data-href="<?=$actual_link?>" 
                         data-layout="box_count"
                     >
                     </div>
-                    
+                    <iframe
+                        src="//www.facebook.com/plugins/like?href=<?= urlencode($actual_link)?>%2F&amp;
+                        kid_directed_site=true&layout=box_count"
+                        scrolling="yes"
+                        frameborder="0"
+                        style="border:none; overflow:hidden; width:60px; height:80px;"
+                        allowTransparency="true">
+                    </iframe>
                     <div 
                         class="fb-comments" 
                         data-href="<?=$actual_link?>" 
@@ -56,8 +56,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         width="100%"
                         data-order-by="reverse_time"
                     >
-                       
                     </div>
+                    
+                    
                 </div>
             </div>
         </div>
