@@ -27,7 +27,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         xmlhttp.send();
     }
     hanhdong();
-    //setInterval(function(){ hanhdong(); }, 3000);
+    setInterval(function(){ hanhdong(); }, 1000);
 </script>
 <div class="row site-index">
     <?php 
