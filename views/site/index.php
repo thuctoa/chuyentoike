@@ -7,12 +7,28 @@ $this->title = Yii::t('app','Chuyện tôi kể');
 //$this->paralg['breadcrumbs'][] = $this->title;
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-$data = json_decode(file_get_contents("https://api.facebook.com/method/links.getStats?urls=".$actual_link."&format=json"), true);
-$share_count=$data[0]['share_count'];
-$like_count=$data[0]['like_count'];
-$comment_count=$data[0]['comment_count'];
-$total_count=$data[0]['total_count'];
 ?>
+<script>
+    function hanhdong(){
+        if (window.XMLHttpRequest) {
+              // code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+        } else { // code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function() {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    var res = JSON.parse(xmlhttp.responseText);
+                    document.getElementById("share_count").innerHTML = res[0]['share_count'];
+                    document.getElementById("like_count").innerHTML = res[0]['like_count'];
+              }
+        }
+        xmlhttp.open("GET","https://api.facebook.com/method/links.getStats?urls=<?=$actual_link?>&format=json",true);
+        xmlhttp.send();
+    }
+    hanhdong();
+    //setInterval(function(){ hanhdong(); }, 3000);
+</script>
 <div class="row site-index">
     <?php 
     if(isset($_GET['baiviet'])){
@@ -33,9 +49,9 @@ $total_count=$data[0]['total_count'];
                     <p >
                         <?=$baiviet['body']?>
                     </p>
-                    <table class="bangfacebook">
+                    <table class="bangfacebook" onmouseover="hanhdong();" onmouseout="hanhdong();"  >
                         <tr >
-                            <td>
+                            <td >
                                 
                             </td>
                             <td >
@@ -44,7 +60,8 @@ $total_count=$data[0]['total_count'];
                                         <div class="pluginCountBoxTextOnly">
                                             <span id="u_0_7">
                                                 <span class="pluginCountTextConnected">
-                                                    <?=$share_count?>
+                                                    <p id="share_count">
+                                                    </p>
                                                 </span> 
                                             </span>
                                         </div>
@@ -61,7 +78,8 @@ $total_count=$data[0]['total_count'];
                                         <div class="pluginCountBoxTextOnly">
                                             <span id="u_0_7">
                                                 <span class="pluginCountTextConnected">
-                                                    <?=$like_count?>
+                                                    <p id="like_count">
+                                                    </p>
                                                 </span> 
                                             </span>
                                         </div>
@@ -74,7 +92,7 @@ $total_count=$data[0]['total_count'];
                             </td>
                         </tr>
                         
-                        <tr>
+                        <tr >
                             <td>
                                 <div class="fb-follow" 
                                     data-href="https://www.facebook.com/chuyentoikevetoi/" 
@@ -83,22 +101,25 @@ $total_count=$data[0]['total_count'];
                                 >
                                 </div>
                             </td>
-                            <td>
+                            <td >
                                 <div 
                                     class="fb-share-button" 
                                     data-href="<?=$actual_link?>" 
                                     data-layout="button"
+                                    
                                 >
                                 </div>
                             </td>
-                            <td>
+                            <td >
                                 <iframe
-                                    src="//www.facebook.com/plugins/like?href=<?= urlencode($actual_link)?>%2F&amp;
+                                    src="//www.facebook.com/plugins/like?href=<?= urlencode($actual_link)?>&amp;
                                     kid_directed_site=true&layout=button"
                                     scrolling="no"
                                     frameborder="0"
-                                    style="border:none; overflow:hidden; width:60px; height:63px;"
-                                    allowTransparency="true">
+                                    style="border:none; overflow:hidden; width:60px; height:20px;"
+                                    allowTransparency="true"
+                                    
+                                    >
                                 </iframe>
                             </td>
                         </tr>
