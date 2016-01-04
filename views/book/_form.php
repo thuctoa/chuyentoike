@@ -17,8 +17,10 @@ use dosamigos\ckeditor\CKEditor;
 
     ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => 64]) ?>
-    
+    <?= $form->field($model, 'title')->widget(CKEditor::className(), [
+            'options' => ['rows' => 6],
+            'preset' => 'advanced'
+    ]) ?>
     <?php
         if($model->img){
     ?>
