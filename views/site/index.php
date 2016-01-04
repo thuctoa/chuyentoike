@@ -27,6 +27,15 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <p >
                         <?=$baiviet['body']?>
                     </p>
+                    <div class="fb-follow" 
+                         data-href="https://www.facebook.com/chuyentoikevetoi/" 
+                         data-layout="box_count" 
+                         data-show-faces="true"
+                    >
+                        
+                    </div>
+                    
+                    
                     <div 
                         class="fb-like" 
                         data-href="<?=$actual_link?>" 
@@ -39,14 +48,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         data-layout="box_count"
                     >
                     </div>
-                    <div class="fb-follow" 
-                         data-href="https://www.facebook.com/chuyentoikevetoi/" 
-                         data-layout="box_count" 
-                         data-show-faces="true"
-                    >
-                        
-                    </div>
-                    
                     
                     <div 
                         class="fb-comments" 
@@ -57,7 +58,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     >
                        
                     </div>
-                   
                 </div>
             </div>
         </div>
