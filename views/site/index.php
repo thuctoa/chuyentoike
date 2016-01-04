@@ -16,9 +16,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             <div class="noidung"> 
                 <div class="modau">
                     
-                    <h1 class="text-center tieude-chinh">
+                    <div class="text-center tieude-chinh">
                         <?=$baiviet['title']?>
-                    </h1>
+                    </div>
                     <?=$baiviet['description']?>
                 </div>
                 
