@@ -21,11 +21,8 @@ use dosamigos\ckeditor\CKEditor;
         
         if ( Yii::$app->user->can('permission_monitor') 
             ||  Yii::$app->user->can('permission_admin')){
-            if ( Yii::$app->user->can('permission_admin')) {
-                echo $form->field($model, 'user_id')->dropDownList(ArrayHelper::map(User::find()->select(['username','id'])->all(), 'id', 'username'),['class' => 'form-control inline-block']); 
-            }else{
-                echo $form->field($model, 'user_id')->textInput(['value'=>\Yii::$app->user->id,'type'=>'hidden'])->label(FALSE);
-            }
+            
+            echo $form->field($model, 'user_id')->dropDownList(ArrayHelper::map(User::find()->select(['username','id'])->all(), 'id', 'username'),['class' => 'form-control inline-block']); 
             echo $form->field($model, 'isbn')->dropDownList(['0' => 'NO', '1' => 'YES']);
 
         }
