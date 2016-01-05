@@ -14,7 +14,7 @@ class SignupForm extends Model
     public $email;
     public $password;
     public $password_repeat;
-    
+    public $displayname;
     /**
      * @inheritdoc
      */
@@ -25,6 +25,7 @@ class SignupForm extends Model
             'email' => Yii::t('app', 'Địa chỉ Email'),
             'password' => Yii::t('app', 'Mật khẩu'),
             'password_repeat' => Yii::t('app', 'Lặp lại mật khẩu của bạn một lần nữa'),
+            'displayname'=> Yii::t('app', 'Tên của bạn(hoặc bút danh)'),
         ];
     }
 
@@ -38,7 +39,7 @@ class SignupForm extends Model
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app','This username has already been taken.')],
             ['username', 'string', 'min' => 4, 'max' => 20],
-
+            ['displayname','required'],
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
@@ -62,6 +63,7 @@ class SignupForm extends Model
     {
         if ($this->validate()) {
             $user = new User();
+            $user->displayname = $this->displayname;
             $user->username = $this->username;
             $user->email = $this->email;
             $user->setPassword($this->password);

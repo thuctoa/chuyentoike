@@ -81,7 +81,6 @@ class SiteController extends Controller
 	       'time_new'=>SORT_DESC,
 		]);
         if ( !Yii::$app->user->can('permission_monitor') ){
-                
             $query->where('isbn=1');
         }
         $countQuery = clone $query;

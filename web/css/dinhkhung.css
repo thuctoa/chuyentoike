@@ -209,7 +209,7 @@
     top:-5px;
 }
 .bangfacebook>tbody>tr>td{
-    text-align: center;
+   // text-align: center;
     padding: 0 10px;
     
 }
@@ -264,4 +264,8 @@
     width: 40vw;
     margin: 0 auto;
     padding: 15px;
+}
+#tacgia{
+    padding: 0 10px;
+    font-weight: bold;
 }

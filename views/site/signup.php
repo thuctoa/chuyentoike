@@ -15,6 +15,7 @@ $this->title = 'Tạo tài khoản';
     <div class="taotaikhoan">
         <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
         <fieldset><legend><?= Yii::t('app', 'Thông tin của bạn')?></legend>
+            <?= $form->field($model, 'displayname') ?>
             <?= $form->field($model, 'username') ?>
             <?= $form->field($model, 'email') ?>
             <?= $form->field($model, 'password')->passwordInput() ?>

@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\LinkPager;
+use app\models\User;
 
 $this->title = Yii::t('app','Chuyện tôi kể');
 //$this->paralg['breadcrumbs'][] = $this->title;
@@ -42,6 +43,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <h2 class="text-center tieude-chinh">
                         <?=$baiviet['title']?>
                     </h2>
+                    
                     <?=$baiviet['description']?>
                 </div>
                 <div class="noidung-chinh">
@@ -52,7 +54,28 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <table class="bangfacebook" onmouseover="hanhdong();" onmouseout="hanhdong();"  >
                         <tr >
                             <td >
-                                
+                                <div class="follow-fb">
+                                    <div class="pluginCountBox">
+                                        <div class="pluginCountBoxTextOnly">
+                                            <span id="u_0_7">
+                                                <span class="pluginCountTextConnected">
+                                                    <p id="tacgia">
+<?php
+    $sql = 'SELECT * FROM user where id ='.$baiviet['user_id'];
+    $user = User::findBySql($sql)->all();  
+?>
+                                                        Tác giả: <?=$user[0]['displayname']?> 
+                                                    </p>
+                                                </span> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="pluginCountBoxNub">
+                                        <s></s>
+                                        <i></i>
+                                    </div>
+                                </div>
+                               
                             </td>
                             <td >
                                 <div class="follow-fb">
