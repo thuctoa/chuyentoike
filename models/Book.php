@@ -54,7 +54,7 @@ class Book extends \yii\db\ActiveRecord
             'description' => Yii::t('app', 'Tóm tắt'),
             'body' => Yii::t('app', 'Nội dung'),
             'user_id' => Yii::t('app', 'Người dùng'),
-            'isbn' => Yii::t('app', 'Loại'),
+            'isbn' => Yii::t('app', 'Công khai'),
             'time_new' => Yii::t('app', 'Thời gian cập nhật'),
             'img' => Yii::t('app', 'Ảnh minh họa'),
         ];

@@ -1,7 +1,6 @@
 <?php
 
 namespace app\models;
-
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -41,31 +40,36 @@ class BookSearch extends Book
      */
     public function search($params)
     {
-        $query = Book::find()->orderBy([
-	       'time_new'=>SORT_DESC,
-		]);
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
-
-        $this->load($params);
         
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            $query = Book::find()->orderBy([
+                   'time_new'=>SORT_DESC,
+                    ]);
+            $dataProvider = new ActiveDataProvider([
+                'query' => $query,
+            ]);
+
+            $this->load($params);
+
+            if (!$this->validate()) {
+                // uncomment the following line if you do not want to return any records when validation fails
+                // $query->where('0=1');
+                return $dataProvider;
+            }
+            if ( !Yii::$app->user->can('permission_monitor') ){
+                
+                $query->where('isbn=1');
+            }
+            $query->andFilterWhere([
+                'id' => $this->id,
+                'user_id' => $this->user_id,
+            ]);
+
+            $query->andFilterWhere(['like', 'title', $this->title])
+                ->andFilterWhere(['like', 'description', $this->description])
+                ->andFilterWhere(['like', 'isbn', $this->isbn]);
+
             return $dataProvider;
-        }
-
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'user_id' => $this->user_id,
-        ]);
-
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'isbn', $this->isbn]);
         
-        return $dataProvider;
     }
     
 }

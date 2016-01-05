@@ -16,7 +16,25 @@ use dosamigos\ckeditor\CKEditor;
         $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); 
 
     ?>
+    
+    <?php
+        
+        if ( Yii::$app->user->can('permission_monitor') 
+            ||  Yii::$app->user->can('permission_admin')){
+            if ( Yii::$app->user->can('permission_admin')) {
+                echo $form->field($model, 'user_id')->dropDownList(ArrayHelper::map(User::find()->select(['username','id'])->all(), 'id', 'username'),['class' => 'form-control inline-block']); 
+            }else{
+                echo $form->field($model, 'user_id')->textInput(['value'=>\Yii::$app->user->id,'type'=>'hidden'])->label(FALSE);
+            }
+            echo $form->field($model, 'isbn')->dropDownList(['0' => 'NO', '1' => 'YES']);
 
+        }
+        else {
+            echo $form->field($model, 'isbn')->textInput(['maxlength' => 32,'type'=>'hidden'])->label(FALSE);
+            echo $form->field($model, 'user_id')->textInput(['value'=>\Yii::$app->user->id,'type'=>'hidden'])->label(FALSE);
+        }
+    ?>
+    
     <?= $form->field($model, 'title')->widget(CKEditor::className(), [
             'options' => ['rows' => 6],
             'preset' => 'advanced'
@@ -39,16 +57,7 @@ use dosamigos\ckeditor\CKEditor;
             'preset' => 'advanced'
     ]) ?>
     
-    <?php
-        if ( Yii::$app->user->can('permission_admin') ){
-            echo $form->field($model, 'isbn')->textInput(['maxlength' => 32]);
-            echo $form->field($model, 'user_id')->dropDownList(ArrayHelper::map(User::find()->select(['username','id'])->all(), 'id', 'username'),['class' => 'form-control inline-block']); 
-        }
-        else {
-            echo $form->field($model, 'isbn')->textInput(['maxlength' => 32,'type'=>'hidden'])->label(FALSE);
-            echo $form->field($model, 'user_id')->textInput(['value'=>\Yii::$app->user->id,'type'=>'hidden'])->label(FALSE);
-        }
-    ?>
+    
     
     <?= $form->field($model, 'time_new')->textInput(['value'=>time(),'type'=>'hidden'])->label(FALSE) ?>
     
