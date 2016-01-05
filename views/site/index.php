@@ -27,8 +27,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         xmlhttp.send();
     }
     hanhdong();
-    //setInterval(function(){ hanhdong(); }, 1000);
+    setInterval(function(){ hanhdong(); }, 10000);
 </script>
+    
 <div class="row site-index">
     <?php 
     if(isset($_GET['baiviet'])){
@@ -43,7 +44,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     </h2>
                     <?=$baiviet['description']?>
                 </div>
-                
                 <div class="noidung-chinh">
                     
                     <p >

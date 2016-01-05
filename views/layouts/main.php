@@ -37,7 +37,19 @@ AppAsset::register($this);
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-71915364-1', 'auto');
     ga('send', 'pageview');
-    
+
+    var chieurongbandau = 700;
+    window.onresize = displayWindowSize;
+    window.onload = displayWindowSize;
+
+    function displayWindowSize() {
+        myWidth = window.innerWidth;
+        myHeight = window.innerHeight;
+        // your size calculation code here
+
+        document.getElementById("timkiem").style.cssText = "width: "+(myWidth-chieurongbandau)+'px;';
+
+    };
 </script>
 <?php $this->beginBody() ?>
     <div class="wrap">
@@ -83,7 +95,7 @@ AppAsset::register($this);
                             'linkOptions' => ['data-method' => 'post']],
                     Yii::$app->user->isGuest ?
                         ['label' => Yii::t('app','Tạo tài khoản'), 'url' => ['/site/signup']] :
-                        ['label' => Yii::t('app','Thay đổi mật khẩu'), 'url'=>['/site/request-password-reset']], 
+                        ['label' => Yii::t('app','Đổi mật khẩu'), 'url'=>['/site/request-password-reset']], 
                 ];
             if ( Yii::$app->user->can('permission_monitor') ){
                 $items[] = ['label' => Yii::t('app','Viết bài mới'), 'url' => ['/book/create']];

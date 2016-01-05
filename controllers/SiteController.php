@@ -14,6 +14,8 @@ use app\models\ResetPasswordForm;
 use app\models\Book;
 use app\models\BookSearch;
 use yii\data\Pagination;
+use app\models\AuthAssignment;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -162,6 +164,14 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
+                    $AuthAssignment             =   new AuthAssignment();
+                    $AuthAssignment->item_name  =   'user';
+                    $taouser                    =   User::find()
+                                                        ->where(['username' => $user->username])
+                                                        ->one();
+                    $AuthAssignment->user_id    =   $taouser['id'];
+                    $AuthAssignment->created_at =   $taouser['created_at'];
+                    $AuthAssignment->save(false);
                     return $this->goHome();
                 }
             }
