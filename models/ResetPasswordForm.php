@@ -47,7 +47,12 @@ class ResetPasswordForm extends Model
             ['password', 'string', 'min' => 6],
         ];
     }
-
+    public function attributeLabels()
+    {
+        return [
+            'password' => Yii::t('app', 'Mật khẩu'),
+        ];
+    }
     /**
      * Resets password.
      *

@@ -247,3 +247,21 @@
     left: 0;
     top: -12px;
 }
+.site-signup{
+    text-align: center;
+    background: white;
+}
+.taotaikhoan{
+    width: 50vw;
+    margin: 0 auto;
+    padding: 15px;
+}
+.site-reset-password, .site-request-password-reset, .site-login{
+    text-align: center;
+    background: white;
+}
+.matkhaumoi, .thaydoimatkhau, .dangnhap{
+    width: 40vw;
+    margin: 0 auto;
+    padding: 15px;
+}

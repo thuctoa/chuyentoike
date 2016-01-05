@@ -75,11 +75,13 @@ AppAsset::register($this);
                    // ['label' => Yii::t('app','Trang chủ'), 'url' => ['/site/index']],
                     //['label' => Yii::t('app','Giới thiệu'), 'url' => ['/site/about']],
                     //['label' => Yii::t('app','Liên hệ'), 'url' => ['/site/contact']],
+                    
                     Yii::$app->user->isGuest ?
                         ['label' => Yii::t('app','Đăng nhập'), 'url' => ['/site/login']] :
                         ['label' => Yii::t('app','Đăng xuất').' (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
+                        ['label' => Yii::t('app','Tạo tài khoản'), 'url' => ['/site/signup']],
                 ];
             if ( Yii::$app->user->can('permission_monitor') ){
                 $items[] = ['label' => Yii::t('app','Viết bài mới'), 'url' => ['/book/create']];

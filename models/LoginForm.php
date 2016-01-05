@@ -31,7 +31,14 @@ class LoginForm extends Model
             ['password', 'validatePassword'],
         ];
     }
-
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('app', 'Tên tài khoản'),
+            'rememberMe' => Yii::t('app', 'Nhớ lại thông tin của tôi'),
+            'password' => Yii::t('app', 'Mật khẩu'),
+        ];
+    }
     /**
      * Validates the password.
      * This method serves as the inline validation for password.
@@ -45,7 +52,7 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, 'Sai tên tài khoản hoặc mật khẩu.');
             }
         }
     }

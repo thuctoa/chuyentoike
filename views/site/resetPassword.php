@@ -6,22 +6,20 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \app\models\ResetPasswordForm */
 
-$this->title = 'Reset password';
+$this->title = 'Thay đổi mật khẩu';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-reset-password">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please choose your new password:</p>
+    <p>Hãy nhập vào mật khẩu mới của bạn</p>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'reset-password-form']); ?>
-                <?= $form->field($model, 'password')->passwordInput() ?>
-                <div class="form-group">
-                    <?= Html::submitButton('Save', ['class' => 'btn btn-primary']) ?>
-                </div>
-            <?php ActiveForm::end(); ?>
-        </div>
+    <div class="matkhaumoi">
+        <?php $form = ActiveForm::begin(['id' => 'reset-password-form']); ?>
+            <?= $form->field($model, 'password')->passwordInput() ?>
+            <div class="form-group">
+                <?= Html::submitButton('Lưu mật khẩu', ['class' => 'btn btn-primary']) ?>
+            </div>
+        <?php ActiveForm::end(); ?>
     </div>
 </div>

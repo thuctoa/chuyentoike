@@ -21,10 +21,10 @@ class SignupForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => Yii::t('app', 'User name'),
-            'email' => Yii::t('app', 'Email address'),
-            'password' => Yii::t('app', 'Password'),
-            'password_repeat' => Yii::t('app', 'Repeat Password'),
+            'username' => Yii::t('app', 'Tên tài khoản'),
+            'email' => Yii::t('app', 'Địa chỉ Email'),
+            'password' => Yii::t('app', 'Mật khẩu'),
+            'password_repeat' => Yii::t('app', 'Lặp lại mật khẩu của bạn một lần nữa'),
         ];
     }
 

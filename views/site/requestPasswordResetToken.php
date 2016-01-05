@@ -6,22 +6,19 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \app\models\PasswordResetRequestForm */
 
-$this->title = 'Request password reset';
+$this->title = 'Yêu cầu thay đổi mật khẩu';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-request-password-reset">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out your email. A link to reset password will be sent there.</p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
-                <?= $form->field($model, 'email') ?>
-                <div class="form-group">
-                    <?= Html::submitButton('Send', ['class' => 'btn btn-primary']) ?>
-                </div>
-            <?php ActiveForm::end(); ?>
-        </div>
+    <p>Bạn hãy cho chúng tôi biết địa chỉ Email của bạn, để thay đổi mật khẩu của bạn.</p>
+    <div class="thaydoimatkhau">
+        <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
+            <?= $form->field($model, 'email') ?>
+            <div class="form-group">
+                <?= Html::submitButton('Gửi yêu cầu', ['class' => 'btn btn-primary']) ?>
+            </div>
+        <?php ActiveForm::end(); ?>
     </div>
 </div>
