@@ -81,7 +81,9 @@ AppAsset::register($this);
                         ['label' => Yii::t('app','Đăng xuất').' (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
-                        ['label' => Yii::t('app','Tạo tài khoản'), 'url' => ['/site/signup']],
+                    Yii::$app->user->isGuest ?
+                        ['label' => Yii::t('app','Tạo tài khoản'), 'url' => ['/site/signup']] :
+                        ['label' => Yii::t('app','Thay đổi mật khẩu'), 'url'=>['/site/request-password-reset']], 
                 ];
             if ( Yii::$app->user->can('permission_monitor') ){
                 $items[] = ['label' => Yii::t('app','Viết bài mới'), 'url' => ['/book/create']];
