@@ -108,7 +108,7 @@ AppAsset::register($this);
     <footer class="footer">
         <div class="container">
             <span id="chuyentoike">
-                &copy; Chuyện tôi kể <?= date('Y') ?>
+                &copy; <?= \Yii::$app->name.' '.date('Y') ?>
             </span>
         </div>
     </footer>
