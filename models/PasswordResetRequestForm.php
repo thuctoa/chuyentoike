@@ -50,7 +50,7 @@ class PasswordResetRequestForm extends Model
                 return \Yii::$app->mailer->compose('passwordResetToken', ['user' => $user])
                     ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name .' '.date('Y')])
                     ->setTo($this->email)
-                    ->setSubject('Password reset for ' . \Yii::$app->name)
+                    ->setSubject('Thay đổi mật khẩu cho ' . \Yii::$app->name)
                     ->send();
             }
         }
