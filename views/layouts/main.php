@@ -100,8 +100,8 @@ AppAsset::register($this);
                                 'items' => [
                                     ['label' => Yii::t('app','Xem hồ sơ'),'url'=>['/site/user']],
                                     '<li class="divider"></li>',
-                                    '<li class="dropdown-header">Thay đổi thông tin</li>',
-                                    ['label' => Yii::t('app','Đổi Tên (bút danh)'), 'url' => '#'],
+                                    '<li class="dropdown-header">Bút danh, Email, số điện thoại</li>',
+                                    ['label' => Yii::t('app','Đổi thông tin'), 'url' => '/site/update-user.html'],
                                     ['label' => Yii::t('app','Đổi mật khẩu'),'url'=>['/site/request-password-reset']],
                                 ],
                             

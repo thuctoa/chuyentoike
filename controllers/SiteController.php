@@ -100,6 +100,25 @@ class SiteController extends Controller
             'pages' => $pages,
         ]);
     }
+    public function actionUpdateUser(){
+        if(Yii::$app->user->id){
+            $model = User::findOne(Yii::$app->user->id);
+            if (isset($_POST['user']) ) {
+                $user=$_POST['user'];
+                $model['displayname']=$user['displayname'];
+                $model['phone']=$user['phone'];
+                $model['email']=$user['email'];
+                if($model->save()){
+                    return $this->redirect(['/site/user']);
+                }
+            }
+            return $this->render('UpdateUser',[
+                'model'=>$model,
+            ]);
+        }else{
+            return $this->redirect('login.html');
+        }
+    }
     public function actionUser(){
         if(Yii::$app->user->id){
             $sql = 'SELECT * FROM user where id ='.Yii::$app->user->id;

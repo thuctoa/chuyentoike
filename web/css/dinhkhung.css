@@ -256,11 +256,11 @@
     margin: 0 auto;
     padding: 15px;
 }
-.site-reset-password, .site-request-password-reset, .site-login{
+.thaydoithongtin,.site-reset-password, .site-request-password-reset, .site-login{
     text-align: center;
     background: white;
 }
-.matkhaumoi, .thaydoimatkhau, .dangnhap{
+.thaydoithongtinform,.noidungthaydoithongtin,.matkhaumoi, .thaydoimatkhau, .dangnhap{
     width: 40vw;
     margin: 0 auto;
     padding: 15px;

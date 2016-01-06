@@ -58,7 +58,14 @@ class User extends ActiveRecord implements IdentityInterface
             ['role', 'in', 'range' => [self::ROLE_USER]],
         ];
     }
-    
+    public function attributeLabels()
+    {
+        return [
+            'displayname' => Yii::t('app', 'Bút danh'),
+            'phone' => Yii::t('app', 'Số điện thoại'),
+            'email' => Yii::t('app', 'Địa chỉ Email'),
+        ];
+    }
 
     /**
      * @inheritdoc
