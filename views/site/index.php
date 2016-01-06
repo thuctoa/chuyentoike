@@ -10,8 +10,10 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 ?>
 <script>
+    var load=0;
     function hanhdong(){
         if(document.getElementById("share_count")&&document.getElementById("like_count")){
+            load=1;
             if (window.XMLHttpRequest) {
                   // code for IE7+, Firefox, Chrome, Opera, Safari
                   xmlhttp=new XMLHttpRequest();
@@ -30,7 +32,17 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         }
     }
     hanhdong();
-   // setInterval(function(){ hanhdong(); }, 10000);
+    var refreshIntervalId=setInterval(
+        function(){
+            if(load==0){
+                hanhdong(); 
+            }else{
+                clearInterval(refreshIntervalId);
+            }
+        }, 1000
+    );
+        
+    
 </script>
     
 <div class="row site-index">
@@ -53,7 +65,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <p >
                         <?=$baiviet['body']?>
                     </p>
-                    <table class="bangfacebook" onmouseover="hanhdong();" onmouseout="hanhdong();"  >
+                    <table class="bangfacebook" onmouseout="hanhdong();"  >
                         <tr >
                             <td >
                                 <div class="follow-fb">
@@ -292,3 +304,4 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     <?php
         }?>
 </div>
+    
