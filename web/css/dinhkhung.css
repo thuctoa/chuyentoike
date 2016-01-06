@@ -269,3 +269,20 @@
     padding: 0 10px;
     font-weight: bold;
 }
+.thongtincanhan{
+    width: 50vw;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #e0dfe3;
+    border-radius: 5px;
+    text-align: center;
+}
+.thongtincanhan>tbody>tr>th{
+    padding: 15px;
+    border: 1px solid #e0dfe3;
+    text-align: center;
+}
+.thongtincanhan>tbody>tr>td{
+    padding: 50px 15px;
+    border: 1px solid #e0dfe3;
+}

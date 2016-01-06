@@ -15,12 +15,14 @@ class SignupForm extends Model
     public $password;
     public $password_repeat;
     public $displayname;
+    public $phone;
     /**
      * @inheritdoc
      */
     public function attributeLabels()
     {
         return [
+            'phone'=> Yii::t('app', 'Số điện thoại'),
             'username' => Yii::t('app', 'Tên tài khoản'),
             'email' => Yii::t('app', 'Địa chỉ Email'),
             'password' => Yii::t('app', 'Mật khẩu'),
@@ -40,6 +42,7 @@ class SignupForm extends Model
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app','This username has already been taken.')],
             ['username', 'string', 'min' => 4, 'max' => 20],
             ['displayname','required'],
+            ['phone','required'],
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
@@ -65,6 +68,7 @@ class SignupForm extends Model
             $user = new User();
             $user->displayname = $this->displayname;
             $user->username = $this->username;
+            $user->phone = $this->phone;
             $user->email = $this->email;
             $user->setPassword($this->password);
             $user->generateAuthKey();

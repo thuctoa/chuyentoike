@@ -50,10 +50,10 @@ class Book extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Tìm kiếm bài viết'),
+            'title' => Yii::t('app', 'Tiêu đề bài viết'),
             'description' => Yii::t('app', 'Tóm tắt'),
             'body' => Yii::t('app', 'Nội dung'),
-            'user_id' => Yii::t('app', 'Người dùng'),
+            'user_id' => Yii::t('app', 'Tác giả'),
             'isbn' => Yii::t('app', 'Công khai'),
             'time_new' => Yii::t('app', 'Thời gian cập nhật'),
             'img' => Yii::t('app', 'Ảnh minh họa'),

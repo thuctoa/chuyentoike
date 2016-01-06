@@ -95,7 +95,17 @@ AppAsset::register($this);
                             'linkOptions' => ['data-method' => 'post']],
                     Yii::$app->user->isGuest ?
                         ['label' => Yii::t('app','Tạo tài khoản'), 'url' => ['/site/signup']] :
-                        ['label' => Yii::t('app','Đổi mật khẩu'), 'url'=>['/site/request-password-reset']], 
+                        [
+                            'label' => Yii::t('app','Thông tin cá nhân'),
+                                'items' => [
+                                    ['label' => Yii::t('app','Xem hồ sơ'),'url'=>['/site/user']],
+                                    '<li class="divider"></li>',
+                                    '<li class="dropdown-header">Thay đổi thông tin</li>',
+                                    ['label' => Yii::t('app','Đổi Tên (bút danh)'), 'url' => '#'],
+                                    ['label' => Yii::t('app','Đổi mật khẩu'),'url'=>['/site/request-password-reset']],
+                                ],
+                            
+                        ], 
                 ];
             if ( Yii::$app->user->can('permission_monitor') ){
                 $items[] = ['label' => Yii::t('app','Viết bài mới'), 'url' => ['/book/create']];

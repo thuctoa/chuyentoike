@@ -100,7 +100,19 @@ class SiteController extends Controller
             'pages' => $pages,
         ]);
     }
-    
+    public function actionUser(){
+        if(Yii::$app->user->id){
+            $sql = 'SELECT * FROM user where id ='.Yii::$app->user->id;
+            $user = User::findBySql($sql)->all(); 
+            return $this->render('user',[
+                'user'=>$user[0],
+            ]);
+        }
+        else{
+            return $this->redirect('login.html');
+        }
+    }
+
     public function actionRoutes()
     {
         return $this->render('routes');

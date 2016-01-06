@@ -6,11 +6,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Book */
 
-$this->title = Yii::t('app', 'Create {modelClass}', [
-    'modelClass' => 'Book',
+$this->title = Yii::t('app', 'Tạo {modelClass}', [
+    'modelClass' => 'bài viết mới',
 ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Books'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Books'), 'url' => ['index']];
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="book-create">
 

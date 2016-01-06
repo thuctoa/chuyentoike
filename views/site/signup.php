@@ -17,6 +17,7 @@ $this->title = 'Tạo tài khoản';
         <fieldset><legend><?= Yii::t('app', 'Thông tin của bạn')?></legend>
             <?= $form->field($model, 'displayname') ?>
             <?= $form->field($model, 'username') ?>
+            <?= $form->field($model, 'phone') ?>
             <?= $form->field($model, 'email') ?>
             <?= $form->field($model, 'password')->passwordInput() ?>
             <?= $form->field($model, 'password_repeat')->passwordInput() ?>
