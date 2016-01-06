@@ -11,24 +11,26 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <script>
     function hanhdong(){
-        if (window.XMLHttpRequest) {
-              // code for IE7+, Firefox, Chrome, Opera, Safari
-              xmlhttp=new XMLHttpRequest();
-        } else { // code for IE6, IE5
-              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        if(document.getElementById("share_count")&&document.getElementById("like_count")){
+            if (window.XMLHttpRequest) {
+                  // code for IE7+, Firefox, Chrome, Opera, Safari
+                  xmlhttp=new XMLHttpRequest();
+            } else { // code for IE6, IE5
+                  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function() {
+                  if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                        var res = JSON.parse(xmlhttp.responseText);
+                        document.getElementById("share_count").innerHTML = res[0]['share_count'];
+                        document.getElementById("like_count").innerHTML = res[0]['like_count'];
+                  }
+            }
+            xmlhttp.open("GET","https://api.facebook.com/method/links.getStats?urls=<?=$actual_link?>&format=json",true);
+            xmlhttp.send();
         }
-        xmlhttp.onreadystatechange=function() {
-              if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    var res = JSON.parse(xmlhttp.responseText);
-                    document.getElementById("share_count").innerHTML = res[0]['share_count'];
-                    document.getElementById("like_count").innerHTML = res[0]['like_count'];
-              }
-        }
-        xmlhttp.open("GET","https://api.facebook.com/method/links.getStats?urls=<?=$actual_link?>&format=json",true);
-        xmlhttp.send();
     }
     hanhdong();
-    setInterval(function(){ hanhdong(); }, 10000);
+   // setInterval(function(){ hanhdong(); }, 10000);
 </script>
     
 <div class="row site-index">
