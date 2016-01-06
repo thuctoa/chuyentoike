@@ -55,11 +55,13 @@ class BookSearch extends Book
                 // $query->where('0=1');
                 return $dataProvider;
             }
-            if ( !Yii::$app->user->can('permission_monitor') ){
+            if(!Yii::$app->user->isGuest){
+                if ( !Yii::$app->user->can('permission_monitor') ){
+                    $query->where('isbn=1 or user_id='.Yii::$app->user->id);
+                }
+            }else{
                 $query->where('isbn=1');
             }
-            
-
             $query->andFilterWhere(['like', 'title', $this->title])
                 ->andFilterWhere(['like', 'description', $this->description])
                 ->andFilterWhere(['like', 'isbn', $this->isbn]);

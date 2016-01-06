@@ -80,8 +80,12 @@ class SiteController extends Controller
         $query = Book::find()->orderBy([
 	       'time_new'=>SORT_DESC,
 		]);
-        if ( !Yii::$app->user->can('permission_monitor') ){
-            $query->where('isbn=1');
+        if(!Yii::$app->user->isGuest){
+            if ( !Yii::$app->user->can('permission_monitor') ){
+                $query->where('isbn=1 or user_id='.Yii::$app->user->id);
+            }
+        }else{
+                $query->where('isbn=1');
         }
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=>10]);
