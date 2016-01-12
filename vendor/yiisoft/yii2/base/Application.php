@@ -608,6 +608,9 @@ abstract class Application extends Module
     {
         return $this->get('security');
     }
+    public function getAuthClientCollection(){
+        return $this->get('authClientCollection');
+    }
 
     /**
      * Returns the configuration of core application components.
@@ -624,6 +627,7 @@ abstract class Application extends Module
             'urlManager' => ['class' => 'yii\web\UrlManager'],
             'assetManager' => ['class' => 'yii\web\AssetManager'],
             'security' => ['class' => 'yii\base\Security'],
+            'authClientCollection'=>['class'=>'yii\authclient\Collection'],
         ];
     }
 

@@ -19,6 +19,7 @@ use app\models\User;
 
 class SiteController extends Controller
 {
+    public $successUrl = 'Success';
     public function beforeAction($action) {
             $this->enableCsrfValidation = false;
             return parent::beforeAction($action);
@@ -62,7 +63,33 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+            'auth' => [
+                'class' => 'yii\authclient\AuthAction',
+                'successCallback' => [$this, 'successCallback'],
+            ], 
         ];
+    }
+    public function successCallback($client)
+    {
+        $attributes = $client->getUserAttributes();
+        // user login or signup comes here
+        /*
+        Checking facebook email registered yet?
+        Maxsure your registered email when login same with facebook email
+        die(print_r($attributes));
+        */
+
+        $user = \common\modules\auth\models\User::find()->where(['email'=>$attributes['email']])->one();
+        if(!empty($user)){
+            Yii::$app->user->login($user);
+
+        }else{
+            // Save session attribute user from FB
+            $session = Yii::$app->session;
+            $session['attributes']=$attributes;
+            // redirect to form signup, variabel global set to successUrl
+            $this->successUrl = \yii\helpers\Url::to(['signup']);
+        }
     }
     public function actionLoginfacebook(){
         return $this->render('loginfacebook',[
