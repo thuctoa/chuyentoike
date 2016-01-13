@@ -140,6 +140,9 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->getPrimaryKey();
     }
+    public function getButdanh(){
+        return $this->displayname.'('.$this->username.')';
+    }
 
     /**
      * @inheritdoc
