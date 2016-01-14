@@ -4,7 +4,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-
+use app\models\Book;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -16,6 +16,14 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php
+        if(isset($_GET['baiviet'])){
+            $baiviet=  Book::findOne($_GET['baiviet']);
+    ?>
+	<meta property="og:image"         content="http://www.chuyentoike.com/uploads/<?=$baiviet['img']?>" />
+    <?php
+        }
+    ?>
     <meta property="fb:app_id" content="1502054410090394" />
     <meta property="fb:admins" content="100010700416665"/>
     <?= Html::csrfMetaTags() ?>

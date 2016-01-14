@@ -58,7 +58,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <h1 class="text-center tieude-chinh">
                         <?=$baiviet['title']?>
                     </h1>
-                    <img src="/uploads/<?=$baiviet['img']?>" class="anhdaidien"/>
                     <?=$baiviet['description']?>
                 </div>
                 <div class="noidung-chinh">
