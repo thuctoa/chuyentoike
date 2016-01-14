@@ -16,6 +16,15 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php 
+    if(isset($_GET['baiviet'])){
+        $id=$_GET['baiviet'];
+        $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    ?>
+    <meta property="og:image"  content="http://chuyentoike.com/uploads/<?=$baiviet['title']?>" />
+    <?php
+    }
+    ?>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
