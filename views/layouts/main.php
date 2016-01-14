@@ -16,11 +16,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:url"           content="http://www.chuyentoike.com/sites.html" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Chuyện tôi kể" />
-    <meta property="og:description"   content="Chuyện tôi kể" />
-    <meta property="og:image"         content="http://www.chuyentoike.com/img/logo.png" />
+    
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>

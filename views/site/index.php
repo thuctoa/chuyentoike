@@ -9,6 +9,11 @@ $this->title = Yii::t('app','Chuyện tôi kể');
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 ?>
+<meta property="og:url"           content="<?=$actual_link?>" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Chuyện tôi kể" />
+<meta property="og:description"   content="Chuyện tôi kể" />
+<meta property="og:image"         content="http://www.chuyentoike.com/img/logo.png" />
 <script>
     var load=0;
     function hanhdong(){
