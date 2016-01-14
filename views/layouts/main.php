@@ -61,10 +61,6 @@ AppAsset::register($this);
 
     };
     
-    FB.ui({
-        method: 'share',
-        href: 'https://developers.facebook.com/docs/',
-      }, function(response){});
 </script>
 
 <?php $this->beginBody() ?>
