@@ -52,6 +52,21 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $id=$_GET['baiviet'];
     ?>
     <meta property="og:image"  content="http://chuyentoike.com/uploads/<?=$baiviet['title']?>" />
+    <meta property="og:url"           content="<?=$actual_link?>" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="<?=$baiviet['title']?>" />
+    <meta property="og:description"   content="<?=$baiviet['description']?>" />
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+        
+        
         <div class="col-lg-8 ">
             <div class="noidung"> 
                 <div class="modau">
