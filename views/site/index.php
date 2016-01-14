@@ -52,7 +52,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $id=$_GET['baiviet'];
     ?>
     <meta property="og:image"  content="http://chuyentoike.com/uploads/<?=$baiviet['title']?>" />
-    <meta property="og:url"           content="<?=$actual_link?>" />
 	<!-- Load Facebook SDK for JavaScript -->
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
