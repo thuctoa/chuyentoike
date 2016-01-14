@@ -51,6 +51,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     if(isset($_GET['baiviet'])){
         $id=$_GET['baiviet'];
     ?>
+    <meta property="og:image"  content="http://chuyentoike.com/uploads/<?=$baiviet['title']?>" />
         <div class="col-lg-8 ">
             <div class="noidung"> 
                 <div class="modau">
