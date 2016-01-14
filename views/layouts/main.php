@@ -50,7 +50,13 @@ AppAsset::register($this);
         document.getElementById("timkiem").style.cssText = "width: "+(myWidth-chieurongbandau)+'px;';
 
     };
+    
+    FB.ui({
+        method: 'share',
+        href: 'https://developers.facebook.com/docs/',
+      }, function(response){});
 </script>
+
 <?php $this->beginBody() ?>
     <div class="wrap">
         
