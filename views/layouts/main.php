@@ -24,8 +24,6 @@ AppAsset::register($this);
     <?php
         }
     ?>
-    <meta property="fb:app_id" content="1502054410090394" />
-    <meta property="fb:admins" content="100010700416665"/>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -37,7 +35,7 @@ AppAsset::register($this);
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=1502054410090394";
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=341390466031284";
     fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   
