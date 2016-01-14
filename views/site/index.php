@@ -6,7 +6,7 @@ use app\models\User;
 
 $this->title = Yii::t('app','Chuyện tôi kể');
 //$this->paralg['breadcrumbs'][] = $this->title;
-$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$actual_link = "http://www.$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 ?>
 
@@ -144,7 +144,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                     class="fb-share-button" 
                                     data-href="<?=$actual_link?>" 
                                     data-layout="button"
-                                    
                                 >
                                 </div>
                             </td>
