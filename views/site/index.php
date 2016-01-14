@@ -139,12 +139,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                 </div>
                             </td>
                             <td >
-                                <div 
-                                    class="fb-share-button" 
-                                    data-href="<?=$actual_link?>" 
-                                    data-layout="button"
-                                >
-                                </div>
+                               <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
                             </td>
                             <td >
                                 <iframe
