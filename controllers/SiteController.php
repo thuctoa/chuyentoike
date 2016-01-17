@@ -64,11 +64,6 @@ class SiteController extends Controller
             ],
         ];
     }
-    public function actionLoginfacebook(){
-        return $this->render('loginfacebook',[
-            
-        ]);
-    }
 
     public function actionIndex()
     {
