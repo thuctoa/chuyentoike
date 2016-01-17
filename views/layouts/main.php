@@ -21,6 +21,7 @@ AppAsset::register($this);
             $baiviet=  Book::findOne($_GET['baiviet']);
             $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     ?>
+        <meta property="fb:app_id"          content="582889218543377" /> 
         <meta property="og:title"         content="<?=$baiviet['title']?>" />
         <meta property="og:url"           content="<?=$actual_link?>" />
 	<meta property="og:type"          content="website" />
