@@ -127,24 +127,35 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                     </div>
                                 </div>
                             </td>
+                            <td>
+                                fdsf
+                            </td>
                         </tr>
                         
                         <tr >
                             <td>
-                                <div class="fb-follow" 
-                                    data-href="https://www.facebook.com/chuyentoikevetoi/" 
-                                    data-layout="button" 
-                                    data-show-faces="true"
-                                >
-                                </div>
+                                <iframe
+                                    src="//www.facebook.com/plugins/follow?href=<?= urlencode('https://www.facebook.com/chuyentoikevetoi/')?>&amp;
+                                    kid_directed_site=true&layout=button"
+                                    scrolling="no"
+                                    frameborder="0"
+                                    style="border:none; overflow:hidden; width:60px; height:20px;"
+                                    allowTransparency="true"
+                                    
+                                    >
+                                </iframe>
                             </td>
                             <td >
-                                <div 
-                                    class="fb-share-button" 
-                                    data-href="<?=$actual_link?>" 
-                                    data-layout="button"
-                                >
-                                </div>
+                                <iframe
+                                    src="//www.facebook.com/plugins/share_button?href=<?= urlencode($actual_link)?>&amp;
+                                    kid_directed_site=true&layout=button"
+                                    scrolling="no"
+                                    frameborder="0"
+                                    style="border:none; overflow:hidden; width:60px; height:20px;"
+                                    allowTransparency="true"
+                                    
+                                    >
+                                </iframe>
                             </td>
                             <td >
                                 <iframe
@@ -157,6 +168,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                     
                                     >
                                 </iframe>
+                                
                             </td>
                         </tr>
                     </table>
