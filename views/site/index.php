@@ -139,7 +139,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                     kid_directed_site=true&layout=button"
                                     scrolling="no"
                                     frameborder="0"
-                                    style="border:none; overflow:hidden; width:60px; height:20px;"
+                                    style="border:none; overflow:hidden; width:80px; height:20px;"
                                     allowTransparency="true"
                                     
                                     >
@@ -151,7 +151,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                     kid_directed_site=true&layout=button"
                                     scrolling="no"
                                     frameborder="0"
-                                    style="border:none; overflow:hidden; width:60px; height:20px;"
+                                    style="border:none; overflow:hidden; width:80px; height:20px;"
                                     allowTransparency="true"
                                     
                                     >
