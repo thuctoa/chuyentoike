@@ -34,6 +34,12 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
+    <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
     <div id="fb-root"></div>
 <script>
     (function(d, s, id) {
