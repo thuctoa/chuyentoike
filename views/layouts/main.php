@@ -16,12 +16,12 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="fb:app_id"          content="582889218543377" /> 
     <?php
         if(isset($_GET['baiviet'])){
             $baiviet=  Book::findOne($_GET['baiviet']);
             $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     ?>
-        <meta property="fb:app_id"          content="582889218543377" /> 
         <meta property="og:title"         content="<?=$baiviet['title']?>" />
         <meta property="og:url"           content="<?=$actual_link?>" />
 	<meta property="og:type"          content="website" />
